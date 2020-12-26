@@ -74,6 +74,11 @@ function sp_scripts() {
 	wp_enqueue_style('animate', get_template_directory_uri().'/css/animate.css');
 	wp_enqueue_style('fontawesome', get_template_directory_uri().'/css/fontawesome-all.css');
 
+    wp_enqueue_style('tpl-fonts', get_template_directory_uri().'/raw_html/fonts/fonts.css');
+    wp_enqueue_style('tpl-global', get_template_directory_uri().'/raw_html/css/global.css');
+    wp_enqueue_style('tpl-header', get_template_directory_uri().'/raw_html/css/header.css');
+    wp_enqueue_style('tpl-content', get_template_directory_uri().'/raw_html/css/content.css');
+
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('swiper', get_template_directory_uri().'/js/swiper.js');
 	wp_enqueue_script('wow', get_template_directory_uri().'/js/wow.js');

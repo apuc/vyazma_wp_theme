@@ -2,7 +2,6 @@
 /*
  * The main template file
  */
-
 get_header(); 
 $sp_obj = new SpClass();?>
 

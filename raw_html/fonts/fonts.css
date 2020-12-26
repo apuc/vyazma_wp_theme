@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('3966.eot');
+  src: url('3966.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('Roboto-Regular.ttf') format('truetype'),
+  url('Roboto-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('3966.eot');
+  src: url('3966.eot?#iefix') format('embedded-opentype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('Roboto-Regular.ttf') format('truetype'),
+  url('Roboto-Regular.woff') format('woff');
+  font-style: normal;
+}
+

@@ -23,6 +23,7 @@
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </buttton>
+    <div id="navOverlay" class="nav_overlay"></div>
     <div class="container_content__blockText">
       <p class="header__text">В старину мужиков, которые что-то мастерили из лозы называли «вязниками». Отсюда и
         название
@@ -30,10 +31,11 @@
     <img class="header__img" src="./img/header_logo.png" alt="">
     <div class="header__nav">
       <nav id="navigationMenu" class="header__nav-navigation">
-        <div class="header__nav-navigation">
-          <a href="" class="header__nav_link">Главная</a>
-          <a href="" class="header__nav_link">Популярные статьи</a>
-          <a href="" class="header__nav_link">Книга о Вязниках</a></div>
+        <!--  <div class="">-->
+        <a href="index2.html" class="header__nav_link">Главная</a>
+        <a href="" class="header__nav_link">Популярные статьи</a>
+        <a href="" class="header__nav_link">Книга о Вязниках</a>
+        <!--  </div>-->
       </nav>
       <div class="header__search"><input type="search">
         <button class="search_button">
@@ -44,8 +46,11 @@
   <section>
     <div class="container_content">
       <div class="container_content_section-content">
+        <p class="section-content_svg"><img class="section-content_svg_calendar" src="./img/calendar.svg" alt=""> <span> 12.12.2020 </span>
+          <img class="section-content_svg_messege" src="./img/messege.svg" alt=""></p>
         <h1>Название статьи Название статьи Название статьи</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        <p class="container_content_section-content_description">Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit, sed do eiusmod tempor incididunt ut labore et
           dolore
           magna aliqua. Ut enim ad mi Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad mi i Lorem ipsum dolor sit amet, consectetur
@@ -67,31 +72,76 @@
           adipisicing
           elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
         </p>
-        <p class="section-content_svg"><img class="section-content_svg_calendar" src="./img/calendar.svg" alt=""> <span> 12.12.2020 </span>
-          <img class="section-content_svg_messege" src="./img/messege.svg" alt=""></p>
+        <div class="container_content_section-content__share-news"><span class="share-news-title"> Делитесь новостями</span>
+          <div>
+          <a href="" class="share-news"><img src="./img/twitter-circled.svg" alt=""></a>
+          <a href="" class="share-news"><img src="./img/facebook-circled.svg" alt=""></a>
+          <a href="" class="share-news"><img src="./img/vkontakte-circled.svg" alt=""></a>
+          </div>
+        </div>
       </div>
-      <div><img src="./img/Статья1.png" alt="">
-        <div class="apiVkComments">
+      <div class="container_content__article_img"><img src="./img/Статья1.png" alt="">
+        <div class="apiVkComments transferJs">
           <h2>Последние коментарии</h2>
-            <img src="./img/заглушка.png" alt="">
-<!--          <script type="text/javascript">
-              VK.init({
-                  apiId: 7707931,
-                  onlyWidgets: true
-              });
+         <!-- <img src="./img/заглушка.png" alt="">-->
+                    <script type="text/javascript">
+                        VK.init({
+                            apiId: 7707931,
+                            onlyWidgets: true
+                        });
 
-          </script>
-          <div id="vk_comments"></div>
-          <script type="text/javascript">
-              VK.Widgets.Comments('vk_comments');
-          </script>-->
+                    </script>
+                    <div id="vk_comments"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Comments('vk_comments');
+                    </script>
 
         </div>
       </div>
 
     </div>
   </section>
-
+  <span class="oldArticleTitle">Похожие новости</span>
+<div class="oldArticle">
+  <article class="oldSingleArticle">
+    <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/OldArticle1.png" alt=""> </div>
+    <div class="OldArticleDescription">
+      <a href="" class="oldSingleArticle_title">Название статьи Название статьи</a>
+      <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi</p>
+    </div>
+  </article>
+  <article class="oldSingleArticle">
+    <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/Статья1.png" alt=""></div>
+    <div class="OldArticleDescription">
+      <a href="" class="oldSingleArticle_title">Название статьи Название статьи</a>
+      <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad miLorem ipsum dolor sit amet, consectetur
+        adipisicing elit, sed do eiusmod
+        tempor iqua. Ut enim ad mi</p>
+    </div>
+  </article>
+  <article class="oldSingleArticle ">
+    <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/OldArticle3.png" alt=""></div>
+    <div class="OldArticleDescription">
+      <a href="" class="oldSingleArticle_title">Название статьи</a>
+      <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi</p>
+    </div>
+  </article>
+  <article class="oldSingleArticle">
+    <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/OldArticle1.png" alt=""> </div>
+    <div class="OldArticleDescription">
+      <a href="" class="oldSingleArticle_title">Название статьи Название статьи</a>
+      <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi</p>
+    </div>
+  </article>
+</div>
 </div>
 <footer>
   <div class="footer_content_wrapper">

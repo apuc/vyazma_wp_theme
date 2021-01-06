@@ -13,6 +13,13 @@
 }
 
 @font-face {
+  font-family: 'Roboto-bold';
+  src: url('Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Roboto-Regular';
   src: url('Roboto-Regular.ttf') format('truetype'),
   url('Roboto-Regular.woff') format('woff');

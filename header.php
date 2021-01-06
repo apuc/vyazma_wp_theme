@@ -36,7 +36,7 @@
         <div class="header__nav">
             <nav id="navigationMenu" class="header__nav-navigation">
                 <div class="header__nav-navigation">
-                    <a href="" class="header__nav_link">Главная</a>
+                    <a href="/main_page.php" class="header__nav_link">Главная</a>
                     <a href="" class="header__nav_link">Популярные статьи</a>
                     <a href="" class="header__nav_link">Книга о Вязниках</a></div>
             </nav>

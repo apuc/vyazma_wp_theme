@@ -6,8 +6,7 @@ get_header();
 $sp_obj = new SpClass();
 ?>
 
-    <h1><?php $sp_obj->get_title(); ?>
-    <h1>
+    <h1><?php $sp_obj->get_title(); ?></h1>
     <div class="container">
 
         <?php get_main_news(); ?>

@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42042c56-8b4f-430d-b85a-f11b8c814f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Roboto/Roboto-ThinItalic.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/3966.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fonts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +89,13 @@
       <workItem from="1608706061684" duration="24576000" />
       <workItem from="1608796244483" duration="3551000" />
       <workItem from="1608803368873" duration="14701000" />
-      <workItem from="1609313648402" duration="10510000" />
+      <workItem from="1609313648402" duration="11794000" />
+      <workItem from="1609326910275" duration="59000" />
+      <workItem from="1609833198753" duration="17407000" />
+      <workItem from="1609929146587" duration="2359000" />
+      <workItem from="1609935680053" duration="263000" />
+      <workItem from="1609936261415" duration="487000" />
+      <workItem from="1609939835432" duration="1894000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовые отступы WordPress">
       <created>1609233989641</created>
@@ -123,7 +111,56 @@
       <option name="project" value="LOCAL" />
       <updated>1609234792465</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Допилил меню, адаптив + оверлей&#10;Шрифты +">
+      <created>1609325823008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609325823008</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix">
+      <created>1609326493778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609326493778</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Вторая страница">
+      <created>1609855669095</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609855669095</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix адаптив изображения главной статьи">
+      <created>1609930630179</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609930630179</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix">
+      <created>1609936669711</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609936669711</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix margin">
+      <created>1609940284299</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609940284299</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix margin">
+      <created>1609941063912</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609941063912</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +182,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Тестовые отступы WordPress" />
     <MESSAGE value="Фиксированное меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фиксированное меню" />
+    <MESSAGE value="Допилил меню, адаптив + оверлей" />
+    <MESSAGE value="Допилил меню, адаптив + оверлей&#10;Шрифты +" />
+    <MESSAGE value="Вторая страница" />
+    <MESSAGE value="fix адаптив изображения главной статьи" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="fix margin" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix margin" />
   </component>
 </project>

@@ -174,6 +174,12 @@ function true_option_page()
 }
 
 
+
+/**
+ * Возвращает массив id => заголовок
+ * Используется для заполнения select'ов в настройках
+ * @return array
+ */
 function get_news_title_and_id(){
     $posts = get_posts([ 'post_type' => 'news', 'numberposts' => -1 ]);
     $data = array();
@@ -477,7 +483,7 @@ function get_main_news()
 {
     $all_options = get_option('true_options');
     $main_post_id = get_option('main_post_id');
-    get_template_part('single-main-news', null, ['main_post_id' => $main_post_id]);
+    get_template_part('load-main-news', null, ['main_post_id' => $main_post_id]);
     get_template_part('load-important-news', null, ['all_options' => $all_options]);
 }
 

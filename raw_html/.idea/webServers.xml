@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c0a88437-b682-40d0-812f-1e21d36b27db" name="artcraft" url="http://192.168.88.234">
+        <fileTransfer host="192.168.88.234" port="2324" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2324" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

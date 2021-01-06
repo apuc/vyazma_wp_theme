@@ -2,51 +2,50 @@
 /*
  * The main template file
  */
-get_header(); 
-$sp_obj = new SpClass();?>
+get_header();
+$sp_obj = new SpClass();
+?>
 
-<h1><?php $sp_obj->get_title();?><h1>
+    <h1><?php $sp_obj->get_title(); ?>
+    <h1>
+    <div class="container">
 
-<?php if ( have_posts() ) :
+        <?php get_main_news(); ?>
 
-	/* Start the Loop */
-	while ( have_posts() ) : the_post(); ?>
+        <div class="container_oldArticle">
+            <div class="container_oldArticle_top">
+                <div class="apiVkComments">
+                    <h2>Последние коментарии</h2>
+                    <img src="<?= get_template_directory_uri() ?>/raw_html/img/заглушка.png" alt="">
+                    <script type="text/javascript">
+                        VK.init({
+                            apiId: 7707931,
+                            onlyWidgets: true
+                        });
+                    </script>
+                    <div id="vk_comments"></div>
+                    <script type="text/javascript">
+                        /* VK.Widgets.Comments('vk_comments'); */
+                    </script>
 
-		<div <?php post_class('one-post');?>>
-			
-			<div class="entry-thumbnail">
-				<a href="<?php echo esc_url(get_the_permalink());?>">
+                </div>
+                <?php render_news_posts(3); ?>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="add_OlderArticle">
 
-					<?php $post_medium_img = $sp_obj->get_thumbnail(get_the_ID(), 'medium'); 
-					$post_full_img = $sp_obj->get_thumbnail(get_the_ID(), 'full');?>
+        </div>
+        <?php
 
-					<img src="<?php echo esc_url($post_medium_img);?>"  data-src="<?php echo esc_url($post_full_img);?>" class="sp_lazyload" alt="<?php the_title_attribute();?>">
-					
-				</a>
-			</div>
-			
-			<div class="entry-title">
-				<a href="<?php echo esc_url(get_the_permalink());?>" class="h3"><?php the_title();?></a>
-			</div>	
-			
-			<div class="entry-summary"><?php
-			
-				if(has_excerpt()){ 
-					echo wp_kses_post(get_the_excerpt());
-				} else {
-					echo wp_kses_post(wp_trim_words(get_the_content(), 30, ' ...' ));
-				}	
-			
-			?></div>
-			
-			<?php $sp_obj->get_entry_meta();?>
 
-		</div>	
+        $news_posts_query = get_news_posts_query(4);
+        get_load_news_button(serialize($news_posts_query->query_vars), $news_posts_query->max_num_pages);
 
-	<?php endwhile;
 
-	sp_get_the_pagination();
 
-endif; 
-
+        ?>
+    </div>
+<?php
 get_footer();

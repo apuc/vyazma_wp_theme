@@ -1,7 +1,7 @@
 .header__img {
-  margin-top: -4.9%;
+  margin-top: -5.9%;
   width: 100%;
-  /*  min-height:400px ;*/
+  max-height: 425px;
 }
 
 .container_content__blockText {
@@ -11,9 +11,9 @@
 
 
 .header__text {
-  font-family: Roboto-Regular, sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
   position: absolute;
-  margin-top: 3.5%;
+  margin-top: 1%;
   max-width: 472px;
   left: 20%;
   font-weight: 300;
@@ -23,7 +23,7 @@
 
 .header__nav_link {
   color: #373333;
-  font-family: Roboto-Regular, sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
   font-size: 18px;
   font-weight: 400;
   text-align: center;
@@ -35,7 +35,8 @@
 
 .header__nav_link:hover {
   color: #b98015;
-
+  background-color: #fafafa;
+  transition: all ease 0.3s;
 }
 
 .header__nav {
@@ -49,7 +50,7 @@
   width: 100%;
   height: 42px;
   background-color: #fafafa;
-  font-family: Roboto-Regular, sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
   font-size: 22px;
   padding: 0 10px;
 }
@@ -59,6 +60,24 @@
   flex-basis: 30%;
   border: 1px solid #c9c9c9;
   transition: all ease 1s;
+}
+
+.nav_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  cursor: pointer;
+  z-index: 10200;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all ease 0.3s;
+}
+
+.activeOverlay {
+  display: block;
+  transition: all ease 0.3s;
 }
 
 .search_button {
@@ -78,6 +97,7 @@
 .show {
   display: none;
 }
+
 .hamburger-line {
   width: 100%;
   height: 4px;
@@ -88,51 +108,59 @@
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.hamburger-line:nth-child(1){
- /* margin: 7px auto 0;*/
+
+.hamburger-line:nth-child(1) {
+  /* margin: 7px auto 0;*/
 }
-.hamburger-line:nth-child(2){
-   margin: 4px auto;
+
+.hamburger-line:nth-child(2) {
+  margin: 4px auto;
 }
-.show.hamburger-active .hamburger-line:nth-child(2){
+
+.show.hamburger-active .hamburger-line:nth-child(2) {
   opacity: 0;
 }
-.show.hamburger-active .hamburger-line:nth-child(1){
+
+.show.hamburger-active .hamburger-line:nth-child(1) {
   -webkit-transform: translateY(10px) rotate(40deg);
   -ms-transform: translateY(10px) rotate(40deg);
   -o-transform: translateY(10px) rotate(40deg);
   transform: translateY(7px) rotate(40deg);
 }
-.show.hamburger-active .hamburger-line:nth-child(3){
-   -webkit-transform: translateY(-10px) rotate(-40deg);
-   -ms-transform: translateY(-10px) rotate(-40deg);
-   -o-transform: translateY(-10px) rotate(-40deg);
-   transform: translateY(-9px) rotate(-40deg);
- }
+
+.show.hamburger-active .hamburger-line:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(-40deg);
+  -ms-transform: translateY(-10px) rotate(-40deg);
+  -o-transform: translateY(-10px) rotate(-40deg);
+  transform: translateY(-9px) rotate(-40deg);
+}
 
 #menu {
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
+  z-index: 10203;
   background-color: #fafafa;
   cursor: pointer;
   border-radius: 50px;
   width: 20px;
   top: 15px;
-  left: 5px;
-  padding:8px;
+  right: 5px;
+  padding: 8px;
   height: 20px;
   text-align: center;
   line-height: 40px;
 }
 
 .header__nav-navigation {
-
+  display: flex;
+  max-width: 250px;
 }
 
 @media (max-width: 995px) {
   .header__text {
     display: none;
   }
+
 }
 
 @media (max-width: 830px) {
@@ -143,25 +171,31 @@
 }
 
 
-
-
 @media (max-width: 660px) {
 
   .show {
     display: block;
   }
 
+  .header__nav_link {
+    font-size: 25px;
+    line-height: 50px;
+    padding-right: 150px;
+  }
+
   .header__nav-navigation {
     display: block;
-    position: absolute;
+    position: fixed;
     left: -100%;
-    top: 5%;
-    z-index: 1;
-    max-width: 400px;
+    overflow: hidden;
+    top: 0;
+    z-index: 10202;
+    /*  max-width: 400px;*/
     background-color: azure;
-    padding: 20px 0 20px 40px;
+    padding: 20px;
     transition: all ease 0.3s;
-    border-radius: 15px;
+    /*  border-radius: 15px;*/
+    height: 100%;
   }
 
   .header__search {
@@ -169,7 +203,7 @@
   }
 
   .active {
-    left: 10px;
+    left: 0;
     transition: all ease 0.3s;
   }
 }

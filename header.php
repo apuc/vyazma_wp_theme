@@ -6,11 +6,13 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
 
     <?php wp_head(); ?>
 </head>

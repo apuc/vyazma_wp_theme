@@ -23,6 +23,7 @@
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </buttton>
+    <div id="navOverlay" class="nav_overlay"></div>
     <div class="container_content__blockText">
       <p class="header__text">В старину мужиков, которые что-то мастерили из лозы называли «вязниками». Отсюда и
         название
@@ -30,10 +31,11 @@
     <img class="header__img" src="./img/header_logo.png" alt="">
     <div class="header__nav">
       <nav id="navigationMenu" class="header__nav-navigation">
-        <div class="header__nav-navigation">
-          <a href="" class="header__nav_link">Главная</a>
+      <!--  <div class="">-->
+          <a href="index2.html" class="header__nav_link">Главная</a>
           <a href="" class="header__nav_link">Популярные статьи</a>
-          <a href="" class="header__nav_link">Книга о Вязниках</a></div>
+          <a href="" class="header__nav_link">Книга о Вязниках</a>
+  <!--  </div>-->
       </nav>
       <div class="header__search"><input type="search">
         <button class="search_button">
@@ -59,30 +61,23 @@
       </div>
     </div>
     <div class="actual__article">
-      <a href="" class="actual__single-article"><img class="actual__single-article_img" src="./img/img1.png" alt="">
+      <a href="" class="actual__single-article">
+        <img class="actual__single-article_img" src="./img/Статья1.png" alt="">
         <div class="actual__single-article_titleWrapper"><p class="actual__single-article_titleWrapper_Title">Название
           Статьи о вязниках</p>
-          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg"
-                                                                   alt="">20.12.2020</p></div>
-      </a>
+          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg" alt="">20.12.2020</p></div></a>
       <a href="" class="actual__single-article"><img class="actual__single-article_img" src="./img/img2.png" alt="">
         <div class="actual__single-article_titleWrapper"><p class="actual__single-article_titleWrapper_Title">Вязники
           что-то там</p>
-          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg"
-                                                                   alt="">20.12.2020</p></div>
-      </a>
+          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg" alt="">20.12.2020</p></div></a>
       <a href="" class="actual__single-article"><img class="actual__single-article_img" src="./img/img3.png" alt="">
         <div class="actual__single-article_titleWrapper"><p class="actual__single-article_titleWrapper_Title">Вязники
           еще много слов статьи</p>
-          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg"
-                                                                   alt="">20.12.2020</p></div>
-      </a>
+          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg" alt="">20.12.2020</p></div></a>
       <a href="" class="actual__single-article"><img class="actual__single-article_img" src="./img/img4.png" alt="">
         <div class="actual__single-article_titleWrapper"><p class="actual__single-article_titleWrapper_Title">Название
           статьи Название 2 статьи</p>
-          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg"
-                                                                   alt="">20.12.2020</p></div>
-      </a>
+          <p class="actual__single-article_titleWrapper_data"><img class="messege_min" src="./img/message_min.svg" alt="">20.12.2020</p></div></a>
     </div>
     <div class="container_oldArticle">
       <div class="container_oldArticle_top">
@@ -98,15 +93,15 @@
           </script>
           <div id="vk_comments"></div>
           <script type="text/javascript">
-              /*VK.Widgets.Comments('vk_comments');*/
+              VK.Widgets.Comments('vk_comments');
           </script>
 
         </div>
         <div class="oldArticle">
 
           <article class="oldSingleArticle">
-            <img class="oldArticleImg" src="./img/OldArticle1.png" alt="">
-            <div>
+            <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/OldArticle1.png" alt=""> </div>
+            <div class="OldArticleDescription">
               <a href="" class="oldSingleArticle_title">Название статьи Название статьи</a>
               <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod
@@ -114,8 +109,8 @@
             </div>
           </article>
           <article class="oldSingleArticle">
-            <img class="oldArticleImg" src="img/OldArticle2.png" alt="">
-            <div>
+            <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/Статья1.png" alt=""></div>
+            <div class="OldArticleDescription">
               <a href="" class="oldSingleArticle_title">Название статьи Название статьи</a>
               <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod
@@ -125,9 +120,8 @@
             </div>
           </article>
           <article class="oldSingleArticle ">
-            <!--<div class="oldSingleArticle_blockImg">--> <img class="oldArticleImg" src="./img/OldArticle3.png"
-                                                                alt=""><!--</div>-->
-            <div>
+            <div class="oldSingleArticle_blockImg"> <img class="oldArticleImg" src="./img/OldArticle3.png" alt=""></div>
+            <div class="OldArticleDescription">
               <a href="" class="oldSingleArticle_title">Название статьи</a>
               <p class="oldSingleArticle_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod

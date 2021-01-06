@@ -34,16 +34,10 @@ $sp_obj = new SpClass();
             </div>
         </div>
         <div class="add_OlderArticle">
-
         </div>
         <?php
-
-
         $news_posts_query = get_news_posts_query(4);
         get_load_news_button(serialize($news_posts_query->query_vars), $news_posts_query->max_num_pages);
-
-
-
         ?>
     </div>
 <?php

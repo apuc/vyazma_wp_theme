@@ -21,6 +21,13 @@ while (have_posts()) : the_post(); ?>
 
                 <p class="container_content_section-content_description">
                     <?= strip_tags(get_the_content()) ?>
+                    <?php
+                    $categories = array();
+                    foreach (get_the_terms(get_the_ID(), 'news') as $term) {
+                        array_push($categories, $term->term_id);
+                    }
+                    var_dump($categories);
+                    ?>
                 </p>
                 <div class="container_content_section-content__share-news1"><span class="share-news-title1"> Делитесь новостями</span>
                     <div>
@@ -38,12 +45,13 @@ while (have_posts()) : the_post(); ?>
             </div>
 
             <div class="container_content__article_img1">
-                <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>"
-                                                             alt="">
+                <div class="container_content__article_img1_wrapper">
+                    <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="">
+                </div>
                 <div class="apiVkComments1 transferJs">
                     <h2>Последние коментарии</h2>
-<!--                                            <img src="-->
-<!--                    --><?//= get_template_directory_uri() ?><!--/imgs/vk_widget.png" alt="">-->
+                    <!--                                            <img src="-->
+                    <!--                    --><?//= get_template_directory_uri() ?><!--/imgs/vk_widget.png" alt="">-->
                     <script type="text/javascript">
                         VK.init({
                             apiId: 7721228,
@@ -66,9 +74,14 @@ while (have_posts()) : the_post(); ?>
     <div class="oldArticle">
 
 
-
     <?php
-    render_news_posts(4);
+    $categories = array();
+    foreach (get_the_terms(get_the_ID(), 'news') as $term) {
+        array_push($categories, $term->term_id);
+    }
+
+    render_news_posts(4, $categories);
+
 endwhile;
 
 ?> </div>

@@ -493,13 +493,25 @@ function get_main_news()
     get_template_part('load-important-news', null, ['all_options' => $all_options]);
 }
 
-function get_news_posts_query($post_per_page)
+function get_news_posts_query($post_per_page, array $category = null)
 {
-    return new WP_Query(array(
+    $params = array(
         'post_type' => 'news',
         'post_status' => 'publish',
-        'posts_per_page' => $post_per_page
-    ));
+        'posts_per_page' => $post_per_page,
+    );
+    if (null !== $category && !empty($category)) {
+        array_push($params, [
+            'tax_query' => [
+                [
+                    'taxonomy' => 'news', // тут укажите правильное название вашей таксономии
+                    'field' => 'term_id', // term_id, slug или name - что удобнее
+                    'terms' => $category, // ID текущего термина в цикле
+                ],
+            ]
+        ]);
+    }
+    return new WP_Query($params);
 }
 
 function get_load_news_button($post_per_page)
@@ -508,20 +520,22 @@ function get_load_news_button($post_per_page)
     if ($news_posts_query->have_posts()) {
         ?>
         <script> var this_page = 1; </script>
-        <div class="btn-loadmore add_OlderArticle_button" title="Загрузить еще"
-             data-param-posts='<?= serialize($news_posts_query->query_vars) ?>'
-             data-max-pages='<?= $news_posts_query->max_num_pages ?>'
-             data-tpl='news'
+        <button id="addOldArticle"
+                class="btn-loadmore add_OlderArticle_button"
+                title="Посмотреть еще"
+                data-param-posts='<?= serialize($news_posts_query->query_vars) ?>'
+                data-max-pages='<?= $news_posts_query->max_num_pages ?>'
+                data-tpl='news'
         >
             <i class="fas fa-redo"></i> Загрузить ещё
-        </div>
+        </button>
         <?php
     }
 }
 
-function render_news_posts($post_per_page)
+function render_news_posts($post_per_page, $category = null): bool
 {
-    $news_posts_query = get_news_posts_query($post_per_page);
+    $news_posts_query = get_news_posts_query($post_per_page, $category);
     if ($news_posts_query->have_posts()) {
         while ($news_posts_query->have_posts()) {
             $news_posts_query->the_post();

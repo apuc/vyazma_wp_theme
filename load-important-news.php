@@ -10,7 +10,7 @@ $all_options = $args['all_options'];
 ?>
 <div class="actual__article">
     <?php for ($i = 1; $i <= 4; $i++) { ?>
-        <a href="" class="actual__single-article">
+        <a href="<?= get_permalink($all_options['important_news_id_' . $i])?>" class="actual__single-article">
             <img class="actual__single-article_img"
                  src="<?= $sp_obj->get_thumbnail($all_options['important_news_id_' . $i], '') ?>" alt="">
             <div class="actual__single-article_titleWrapper">

@@ -112,12 +112,12 @@ add_action('manage_news_posts_custom_column', function ($column_name, $post_ID) 
 add_action('admin_print_footer_scripts-edit.php', function () {
     ?>
 
-    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery.min.js?ver=3.5.1"
+    <script type="text/javascript" src="https://vyaznik.craft-group.xyz/js/jquery/jquery.min.js?ver=3.5.1"
             id="jquery-core-js"></script>
-    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
+    <script type="text/javascript" src="https://vyaznik.craft-group.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
             id="jquery-migrate-js"></script>
     <script type="text/javascript"
-            src="http://vyazma.loc/wp-content/themes/vyazma_wp_theme/js/ajax-load-more.js?ver=5.6"
+            src="https://vyaznik.craft-group.xyz/wp-content/themes/vyazma_wp_theme/js/ajax-load-more.js?ver=5.6"
             id="wp_ajax_loadmore-js"></script>
 
     <style>

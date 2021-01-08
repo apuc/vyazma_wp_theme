@@ -17,7 +17,7 @@ $sp_obj = new SpClass();
                         <h2>Последние коментарии</h2>
                         <script type="text/javascript">
                             VK.init({
-                                apiId: 7721228,
+                                apiId: 7722333,
                                 onlyWidgets: true
                             });
                         </script>

@@ -31,9 +31,7 @@
         <div class="header__nav">
             <nav id="navigationMenu" class="header__nav-navigation">
                 <div class="header__nav-navigation">
-                    <a href="/main_page.php" class="header__nav_link">Главная</a>
-                    <a href="" class="header__nav_link">Популярные статьи</a>
-                    <a href="" class="header__nav_link">Книга о Вязниках</a></div>
+                    <?php get_header_menu('Menu 1'); ?>
             </nav>
             <div class="header__search"><input type="search">
                 <button class="search_button">

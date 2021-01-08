@@ -452,7 +452,7 @@ function register_news_post_type()
             'comments',
             'thumbnail'
         ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-        'taxonomies' => [],
+        'taxonomies' => ['news'],
         'has_archive' => false,
         'rewrite' => true,
         'query_var' => true,
@@ -484,6 +484,21 @@ function sp_widgets_init()
 
 add_action('widgets_init', 'sp_widgets_init');
 
+function get_header_menu($menu_name){
+    foreach ( wp_get_nav_menu_items($menu_name) as $item){
+        ?>
+        <a href="<?= $item->url?>" class="header__nav_link"><?= $item->post_title ?></a>
+        <?php
+    }
+}
+
+function get_footer_menu($menu_name){
+    foreach ( wp_get_nav_menu_items($menu_name) as $item){
+        ?>
+        <a href="<?= $item->url?>" class="footer_links"><?= $item->post_title ?></a>
+        <?php
+    }
+}
 
 function get_main_news()
 {
@@ -495,22 +510,24 @@ function get_main_news()
 
 function get_news_posts_query($post_per_page, array $category = null)
 {
-    $params = array(
+    $params = [
         'post_type' => 'news',
-        'post_status' => 'publish',
         'posts_per_page' => $post_per_page,
-    );
+    ];
+
     if (null !== $category && !empty($category)) {
-        array_push($params, [
-            'tax_query' => [
-                [
-                    'taxonomy' => 'news', // тут укажите правильное название вашей таксономии
-                    'field' => 'term_id', // term_id, slug или name - что удобнее
-                    'terms' => $category, // ID текущего термина в цикле
-                ],
-            ]
-        ]);
+        $params = array_merge($params, array(
+            'post__not_in' => array(get_the_ID()),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'news',
+                    'field' => 'term_id',
+                    'terms' => $category
+                )
+            )
+        ));
     }
+
     return new WP_Query($params);
 }
 
@@ -583,11 +600,11 @@ function sp_scripts()
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/fontawesome-all.css');
 
-    wp_enqueue_style('tpl-fonts', get_template_directory_uri() . '/raw_html/fonts/fonts.css');
-    wp_enqueue_style('tpl-global', get_template_directory_uri() . '/raw_html/css/global.css');
-    wp_enqueue_style('tpl-header', get_template_directory_uri() . '/raw_html/css/header.css');
+//    wp_enqueue_style('tpl-fonts', get_template_directory_uri() . '/raw_html/fonts/fonts.css');
+//    wp_enqueue_style('tpl-global', get_template_directory_uri() . '/raw_html/css/global.css');
+//    wp_enqueue_style('tpl-header', get_template_directory_uri() . '/raw_html/css/header.css');
     wp_enqueue_style('tpl-content', get_template_directory_uri() . '/raw_html/css/content.css');
-    wp_enqueue_style('tpl-contentSecondArticle', get_template_directory_uri() . '/raw_html/css/contentSecondArticle.css');
+    //wp_enqueue_style('tpl-contentSecondArticle', get_template_directory_uri() . '/raw_html/css/contentSecondArticle.css');
 
     wp_enqueue_script('wp_ajax_loadmore', get_template_directory_uri() .
         '/js/ajax-load-more.js', array('jquery'), '', true);

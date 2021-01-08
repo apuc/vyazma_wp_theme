@@ -21,13 +21,6 @@ while (have_posts()) : the_post(); ?>
 
                 <p class="container_content_section-content_description">
                     <?= strip_tags(get_the_content()) ?>
-                    <?php
-                    $categories = array();
-                    foreach (get_the_terms(get_the_ID(), 'news') as $term) {
-                        array_push($categories, $term->term_id);
-                    }
-                    var_dump($categories);
-                    ?>
                 </p>
                 <div class="container_content_section-content__share-news1"><span class="share-news-title1"> Делитесь новостями</span>
                     <div>
@@ -60,7 +53,7 @@ while (have_posts()) : the_post(); ?>
                     </script>
                     <div id="vk_comments"></div>
                     <script type="text/javascript">
-                        VK.Widgets.Comments("vk_comments", {limit: 3, attach: false});
+                        VK.Widgets.Comments("vk_comments", {limit: 5, attach: false});
                     </script>
 
                 </div>

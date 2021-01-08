@@ -11,6 +11,7 @@ function open() {
 	document.getElementById("navigationMenu").classList.toggle("active");
 	document.querySelector(".nav_overlay").classList.toggle("activeOverlay")
 	menuButton.classList.toggle("hamburger-active");
+	document.querySelector('body').classList.toggle("body__hidden");
 }
 
 

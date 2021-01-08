@@ -25,11 +25,11 @@ $sp_obj = new SpClass();
                         </script>
                         <div id="vk_comments"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Comments("vk_comments", {limit: 3, width: "50", attach: false});
+                            VK.Widgets.Comments("vk_comments");
                         </script>
 
                     </div>
-                    <?php render_news_posts(3); ?>
+                    <?php render_news_posts(2); ?>
                 </div>
                 <div>
                 </div>

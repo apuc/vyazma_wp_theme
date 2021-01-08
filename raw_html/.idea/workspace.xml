@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42042c56-8b4f-430d-b85a-f11b8c814f48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contentSecondArticle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/contentSecondArticle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/content.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,6 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1lm3SQAyafaFmzzU7Zr5rpZoyhn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,7 +66,7 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -116,7 +117,7 @@
       <workItem from="1610006115173" duration="82000" />
       <workItem from="1610006577214" duration="250000" />
       <workItem from="1610007247440" duration="313000" />
-      <workItem from="1610022672726" duration="2942000" />
+      <workItem from="1610022672726" duration="15223000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовые отступы WordPress">
       <created>1609233989641</created>
@@ -202,7 +203,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610024545500</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix WP Статья 1 img">
+      <created>1610028880094</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610028880094</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Стили в один файл content.css">
+      <created>1610099518598</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610099518598</updated>
+    </task>
+    <task id="LOCAL-00015" summary="apiVk other version">
+      <created>1610107707971</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610107707971</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +255,9 @@
     <MESSAGE value="fix svg" />
     <MESSAGE value="fix svg flex" />
     <MESSAGE value="fix WP" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix WP" />
+    <MESSAGE value="fix WP Статья 1 img" />
+    <MESSAGE value="Стили в один файл content.css" />
+    <MESSAGE value="apiVk other version" />
+    <option name="LAST_COMMIT_MESSAGE" value="apiVk other version" />
   </component>
 </project>

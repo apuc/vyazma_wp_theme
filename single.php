@@ -47,7 +47,7 @@ while (have_posts()) : the_post(); ?>
                     <!--                    --><?//= get_template_directory_uri() ?><!--/imgs/vk_widget.png" alt="">-->
                     <script type="text/javascript">
                         VK.init({
-                            apiId: 7721228,
+                            apiId: 7722333,
                             onlyWidgets: true
                         });
                     </script>

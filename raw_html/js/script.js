@@ -26,7 +26,7 @@ function transferEl(el, parentEl, minWidth, maxWidth) {
 }
 
 const vk = document.querySelector(".transferJs");
-const containerVk = document.querySelector(".container_content");
+const containerVk = document.querySelector(".container_content1");
 transferEl(vk, containerVk, 937);
 
 window.onload = function () {

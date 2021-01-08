@@ -4,28 +4,74 @@
  */
 
 get_header();
-$sp_obj = New SpClass();
+$sp_obj = new SpClass();
 
-while ( have_posts() ) : the_post(); ?>
+while (have_posts()) : the_post(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('post');?>>
-		
-		<div class="entry-header">
-			<h1><?php $sp_obj->get_title();?></h1>
-		</div>
+    <div class="container">
+    <section>
+        <div class="container_content1">
+            <div class="container_content_section-content1">
+                <p class="section-content_svg"><img class="section-content_svg_calendar"
+                                                    src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
+                                                    alt=""> <span> <?php the_date() ?> </span>
+                    <img class="section-content_svg_messege1"
+                         src="<?= get_template_directory_uri() ?>/raw_html/img/messege.svg" alt=""></p>
+                <h1><?php the_title() ?></h1>
 
-		<div class="entry-content">
-			<?php the_content();?>
-		</div>
+                <p class="container_content_section-content_description">
+                    <?= strip_tags(get_the_content()) ?>
+                </p>
+                <div class="container_content_section-content__share-news1"><span class="share-news-title1"> Делитесь новостями</span>
+                    <div>
+                        <a href="" class="share-news1"><img
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/twitter-circled.svg"
+                                    alt=""></a>
+                        <a href="" class="share-news1"><img
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/facebook-circled.svg"
+                                    alt=""></a>
+                        <a href="" class="share-news1"><img
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/vkontakte-circled.svg"
+                                    alt=""></a>
+                    </div>
+                </div>
+            </div>
 
-	</article>
+            <div class="container_content__article_img1">
+                <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>"
+                                                             alt="">
+                <div class="apiVkComments1 transferJs">
+                    <h2>Последние коментарии</h2>
+<!--                                            <img src="-->
+<!--                    --><?//= get_template_directory_uri() ?><!--/imgs/vk_widget.png" alt="">-->
+                    <script type="text/javascript">
+                        VK.init({
+                            apiId: 7721228,
+                            onlyWidgets: true
+                        });
+                    </script>
+                    <div id="vk_comments"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Comments("vk_comments", {limit: 3, attach: false});
+                    </script>
 
-	<?php 
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
+                </div>
+            </div>
 
-endwhile; 
+        </div>
+    </section>
 
-get_sidebar(); 
+    <span class="oldArticleTitle1">Похожие новости</span>
+
+    <div class="oldArticle">
+
+
+
+    <?php
+    render_news_posts(4);
+endwhile;
+
+?> </div>
+    </div>
+<?php
 get_footer();

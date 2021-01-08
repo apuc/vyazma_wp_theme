@@ -71,12 +71,14 @@ add_filter('manage_news_posts_columns', function ($columns) {
 });
 
 
-function set_main_id() {
+function set_main_id()
+{
     var_dump($_POST);
     $id = $_POST['id'];
     update_option('main_post_id', $id);
     die();
 }
+
 add_action('wp_ajax_setmainid', 'set_main_id');
 add_action('wp_ajax_nopriv_setmainid', 'set_main_id');
 
@@ -110,9 +112,13 @@ add_action('manage_news_posts_custom_column', function ($column_name, $post_ID) 
 add_action('admin_print_footer_scripts-edit.php', function () {
     ?>
 
-    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
-    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
-    <script type="text/javascript" src="http://vyazma.loc/wp-content/themes/vyazma_wp_theme/js/ajax-load-more.js?ver=5.6" id="wp_ajax_loadmore-js"></script>
+    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery.min.js?ver=3.5.1"
+            id="jquery-core-js"></script>
+    <script type="text/javascript" src="http://vyazma.loc/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
+            id="jquery-migrate-js"></script>
+    <script type="text/javascript"
+            src="http://vyazma.loc/wp-content/themes/vyazma_wp_theme/js/ajax-load-more.js?ver=5.6"
+            id="wp_ajax_loadmore-js"></script>
 
     <style>
         .column-id {
@@ -174,17 +180,17 @@ function true_option_page()
 }
 
 
-
 /**
  * Возвращает массив id => заголовок
  * Используется для заполнения select'ов в настройках
  * @return array
  */
-function get_news_title_and_id(){
-    $posts = get_posts([ 'post_type' => 'news', 'numberposts' => -1 ]);
+function get_news_title_and_id()
+{
+    $posts = get_posts(['post_type' => 'news', 'numberposts' => -1]);
     $data = array();
-    foreach ($posts as $post){
-        $data += [ $post->ID => $post->post_title ];
+    foreach ($posts as $post) {
+        $data += [$post->ID => $post->post_title];
     }
     return $data;
 }
@@ -496,28 +502,37 @@ function get_news_posts_query($post_per_page)
     ));
 }
 
-function get_load_news_button($data_param_posts, $data_max_pages)
-{ ?>
-    <script> var this_page = 1; </script>
-    <div class="btn-loadmore add_OlderArticle_button" title="Загрузить еще"
-         data-param-posts='<?= $data_param_posts ?>'
-         data-max-pages='<?= $data_max_pages ?>'
-         data-tpl='news'
-    >
-        <i class="fas fa-redo"></i> Загрузить ещё
-    </div>
-    <?php
+function get_load_news_button($post_per_page)
+{
+    $news_posts_query = get_news_posts_query(4);
+    if ($news_posts_query->have_posts()) {
+        ?>
+        <script> var this_page = 1; </script>
+        <div class="btn-loadmore add_OlderArticle_button" title="Загрузить еще"
+             data-param-posts='<?= serialize($news_posts_query->query_vars) ?>'
+             data-max-pages='<?= $news_posts_query->max_num_pages ?>'
+             data-tpl='news'
+        >
+            <i class="fas fa-redo"></i> Загрузить ещё
+        </div>
+        <?php
+    }
 }
 
 function render_news_posts($post_per_page)
 {
     $news_posts_query = get_news_posts_query($post_per_page);
-
-    while ($news_posts_query->have_posts()) {
-        $news_posts_query->the_post();
-        get_template_part('load-news');
+    if ($news_posts_query->have_posts()) {
+        while ($news_posts_query->have_posts()) {
+            $news_posts_query->the_post();
+            get_template_part('load-news');
+        }
+        wp_reset_postdata();
+        return true; //TODO
+    } else {
+        echo "Новостей больше нет.";
+        return false;
     }
-    wp_reset_postdata();
 }
 
 // AJAX загрузка постов
@@ -534,8 +549,10 @@ function load_posts()
             the_post();
             get_template_part('load-news');
         }
-        die();
+    } else {
+        echo "Новостей больше нет.";
     }
+    die();
 }
 
 
@@ -556,6 +573,7 @@ function sp_scripts()
     wp_enqueue_style('tpl-global', get_template_directory_uri() . '/raw_html/css/global.css');
     wp_enqueue_style('tpl-header', get_template_directory_uri() . '/raw_html/css/header.css');
     wp_enqueue_style('tpl-content', get_template_directory_uri() . '/raw_html/css/content.css');
+    wp_enqueue_style('tpl-contentSecondArticle', get_template_directory_uri() . '/raw_html/css/contentSecondArticle.css');
 
     wp_enqueue_script('wp_ajax_loadmore', get_template_directory_uri() .
         '/js/ajax-load-more.js', array('jquery'), '', true);

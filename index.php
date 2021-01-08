@@ -15,16 +15,16 @@ $sp_obj = new SpClass();
             <div class="container_oldArticle_top">
                 <div class="apiVkComments">
                     <h2>Последние коментарии</h2>
-                    <img src="<?= get_template_directory_uri() ?>/raw_html/img/заглушка.png" alt="">
+<!--                    <img src="--><?//= get_template_directory_uri() ?><!--/raw_html/img/заглушка.png" alt="">-->
                     <script type="text/javascript">
                         VK.init({
-                            apiId: 7707931,
+                            apiId: 7721228,
                             onlyWidgets: true
                         });
                     </script>
                     <div id="vk_comments"></div>
                     <script type="text/javascript">
-                        /* VK.Widgets.Comments('vk_comments'); */
+                        VK.Widgets.Comments("vk_comments", {limit: 3, width: "50", attach: false});
                     </script>
 
                 </div>
@@ -36,8 +36,7 @@ $sp_obj = new SpClass();
         <div class="add_OlderArticle">
         </div>
         <?php
-        $news_posts_query = get_news_posts_query(4);
-        get_load_news_button(serialize($news_posts_query->query_vars), $news_posts_query->max_num_pages);
+        get_load_news_button(4);
         ?>
     </div>
 <?php

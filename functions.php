@@ -117,7 +117,7 @@ add_action('admin_print_footer_scripts-edit.php', function () {
     <script type="text/javascript" src="https://vyaznik.craft-group.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
             id="jquery-migrate-js"></script>
     <script type="text/javascript"
-            src="https://vyaznik.craft-group.xyz/wp-content/themes/vyazma_wp_theme/js/ajax-load-more.js?ver=5.6"
+            src="https://vyaznik.craft-group.xyz/wp-content/themes/sp-theme/js/ajax-load-more.js?ver=5.6"
             id="wp_ajax_loadmore-js"></script>
 
     <style>

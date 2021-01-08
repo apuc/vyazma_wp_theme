@@ -15,8 +15,6 @@ $sp_obj = new SpClass();
                 <div class="container_oldArticle_top">
                     <div class="apiVkComments">
                         <h2>Последние коментарии</h2>
-                        <!--                    <img src="-->
-                        <? //= get_template_directory_uri() ?><!--/raw_html/img/заглушка.png" alt="">-->
                         <script type="text/javascript">
                             VK.init({
                                 apiId: 7721228,
@@ -29,7 +27,8 @@ $sp_obj = new SpClass();
                         </script>
 
                     </div>
-                    <?php render_news_posts(2); ?>
+                    <?php $first_posts_num = 2; // also offset
+                    render_news_posts( get_news_posts_query($first_posts_num) ); ?>
                 </div>
                 <div>
                 </div>
@@ -37,7 +36,7 @@ $sp_obj = new SpClass();
             <div class="add_OlderArticle">
             </div>
             <?php
-            get_load_news_button(4);
+            get_load_news_button(get_news_posts_query(4, null, $first_posts_num));
             ?>
         </section>
     </div>

@@ -20,7 +20,7 @@ while (have_posts()) : the_post(); ?>
                 <h1><?php the_title() ?></h1>
 
                 <p class="container_content_section-content_description">
-                    <?= strip_tags(get_the_content()) ?>
+                    <?= str_replace(array('<pre>', '</pre>'), '', get_the_content()) ?>
                 </p>
                 <div class="container_content_section-content__share-news1"><span class="share-news-title1"> Делитесь новостями</span>
                     <div>
@@ -73,7 +73,7 @@ while (have_posts()) : the_post(); ?>
         array_push($categories, $term->term_id);
     }
 
-    render_news_posts(4, $categories);
+    render_news_posts(get_news_posts_query(4, $categories));
 
 endwhile;
 

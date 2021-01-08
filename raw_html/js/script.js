@@ -36,12 +36,13 @@ window.onload = function () {
 
 	if (document.querySelector("#addOldArticle")) {
 		document.querySelector("#addOldArticle").addEventListener("click", function () {
-			let linkImg = "./img/OldArticle1.png";
+			let linkImg = "./img/vgrom.com_1453716065_oboi.jpg";
 			let linkTitle = "Название статьи Название статьи";
 			let articleText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi";
 			let template = {
 				articleOld: `
-						<article class="oldSingleArticle">
+						<article class="oldSingleArticle  ">
+						<a href="" class="ArticleHref"></a>
 							<img class="oldArticleImg" src="{linkImg}" alt="">
 		<div>
 		<a href="" class="oldSingleArticle_title">{linkTitle}</a>

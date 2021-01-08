@@ -10,7 +10,7 @@ wp_footer(); ?>
         <div class="footer_links_wrapper">
             <?php get_footer_menu('Menu 1');?>
         </div>
-        <div><span>© 2014 Все права защищены</span></div>
+        <div><span>© <?= date("Y")?> Все права защищены</span></div>
     </div>
 </footer>
 

@@ -4,7 +4,6 @@
     <list default="true" id="42042c56-8b4f-430d-b85a-f11b8c814f48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +116,7 @@
       <workItem from="1610006115173" duration="82000" />
       <workItem from="1610006577214" duration="250000" />
       <workItem from="1610007247440" duration="313000" />
-      <workItem from="1610022672726" duration="15223000" />
+      <workItem from="1610022672726" duration="22950000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовые отступы WordPress">
       <created>1609233989641</created>
@@ -224,7 +223,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610107707971</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="отступы старый статей индекс2">
+      <created>1610108839546</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610108839546</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ссылки на статьи">
+      <created>1610115288572</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610115288572</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix">
+      <created>1610118456948</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610118456949</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +270,6 @@
     <MESSAGE value="Допилил меню, адаптив + оверлей&#10;Шрифты +" />
     <MESSAGE value="Вторая страница" />
     <MESSAGE value="fix адаптив изображения главной статьи" />
-    <MESSAGE value="fix" />
     <MESSAGE value="fix margin" />
     <MESSAGE value="fix svg" />
     <MESSAGE value="fix svg flex" />
@@ -258,6 +277,9 @@
     <MESSAGE value="fix WP Статья 1 img" />
     <MESSAGE value="Стили в один файл content.css" />
     <MESSAGE value="apiVk other version" />
-    <option name="LAST_COMMIT_MESSAGE" value="apiVk other version" />
+    <MESSAGE value="отступы старый статей индекс2" />
+    <MESSAGE value="Ссылки на статьи" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

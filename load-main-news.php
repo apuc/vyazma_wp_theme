@@ -22,7 +22,7 @@ setup_postdata($post);
         <h1 href=""> <?= the_title();?></h1>
         <p>
             <?= (500 < strlen(get_the_content())) ?
-                substr(strip_tags(get_the_content()), 0, 500) . '...' :
+                mb_substr(str_replace(array('<pre>', '</pre>'), '', get_the_content()), 0, 500) . '...' :
                 strip_tags(get_the_content()); ?>
         </p>
         <p class="section-content_svg">

@@ -508,12 +508,16 @@ function get_main_news()
     get_template_part('load-important-news', null, ['all_options' => $all_options]);
 }
 
-function get_news_posts_query($post_per_page, array $category = null)
+function get_news_posts_query($post_per_page, array $category = null, $offset = null)
 {
     $params = [
         'post_type' => 'news',
-        'posts_per_page' => $post_per_page,
+        'posts_per_page' => $post_per_page
     ];
+
+    if (null !== $offset && !empty($offset)){
+        $params = array_merge($params, array('offset' => $offset));
+    }
 
     if (null !== $category && !empty($category)) {
         $params = array_merge($params, array(
@@ -531,9 +535,9 @@ function get_news_posts_query($post_per_page, array $category = null)
     return new WP_Query($params);
 }
 
-function get_load_news_button($post_per_page)
+function get_load_news_button($news_posts_query)
 {
-    $news_posts_query = get_news_posts_query(4);
+    //$news_posts_query = get_news_posts_query($post_per_page, $category, $exclude_id);
     if ($news_posts_query->have_posts()) {
         ?>
         <script> var this_page = 1; </script>
@@ -547,24 +551,29 @@ function get_load_news_button($post_per_page)
             <i class="fas fa-redo"></i> Загрузить ещё
         </button>
         <?php
+    } else {
+        echo "Новостей больше нет";
     }
 }
 
-function render_news_posts($post_per_page, $category = null): bool
+function render_news_posts($news_posts_query)
 {
-    $news_posts_query = get_news_posts_query($post_per_page, $category);
+    //$news_posts_query = get_news_posts_query($post_per_page, $category, $exclude_id);
     if ($news_posts_query->have_posts()) {
+        $posts_id = array();
         while ($news_posts_query->have_posts()) {
             $news_posts_query->the_post();
             get_template_part('load-news');
+            array_push($posts_id, get_the_ID());
         }
         wp_reset_postdata();
-        return true; //TODO
+        return $posts_id;
     } else {
         echo "Новостей больше нет.";
-        return false;
+        return null;
     }
 }
+
 
 // AJAX загрузка постов
 function load_posts()
@@ -572,7 +581,9 @@ function load_posts()
     $args = unserialize(stripslashes($_POST['query']));
     $args['paged'] = $_POST['page'] + 1; // следующая страница
 
-    //$args['posts_per_page'] = 4; // по сколько записей подгружать
+    if(1 != $_POST['page']) {
+        $args['offset'] += ($_POST['page'] - 1) * 4;
+    }
 
     query_posts($args);
     if (have_posts()) {

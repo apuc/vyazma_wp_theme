@@ -12,6 +12,8 @@ jQuery(function ($) {
             'tpl': _this.attr('data-tpl')
         }
 
+        console.log(this_page);
+
         $.ajax({
             url: '/wp-admin/admin-ajax.php',
             data: data,
@@ -20,7 +22,7 @@ jQuery(function ($) {
                 if (data) {
                     _this.html('<i class="fas fa-redo"></i> Загрузить ещё');
                     _this.prev().prev().append(data); // где вставить данные
-                    this_page++;                      // увелич. номер страницы +1
+                    this_page++; // увелич. номер страницы +1
                     if (this_page == _this.attr('data-max-pages')) {
                         _this.remove();               // удаляем кнопку, если последняя стр.
                     }

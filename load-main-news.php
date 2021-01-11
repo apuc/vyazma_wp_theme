@@ -27,10 +27,7 @@ setup_postdata($post);
         <p class="section-content_svg">
             <img class="section-content_svg_calendar"
                  src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg" alt="">
-
             <span> <?= get_the_date(); ?> </span>
-            <img class="section-content_svg_messege"
-                 src="<?= get_template_directory_uri() ?>/raw_html/img/messege.svg" alt="">
         </p>
     </div>
 </div>

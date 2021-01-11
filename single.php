@@ -36,8 +36,7 @@ while (have_posts()) : the_post(); ?>
                     <img class="section-content_svg_calendar"
                          src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
                          alt=""> <span> <?php the_date() ?> </span>
-                    <img class="section-content_svg_messege1"
-                         src="<?= get_template_directory_uri() ?>/raw_html/img/messege.svg" alt=""></p>
+                </p>
                 <h1 class="section__content__title"><?php the_title() ?></h1>
                 <span class="container_content_section-content_description1">
                     <?= str_replace(array('<pre>', '</pre>'), '', get_the_content()) ?>

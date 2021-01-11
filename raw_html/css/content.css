@@ -856,7 +856,7 @@ p.section-content_svg {
   font-size: 14px;
   color: #1c1c1cbd;
   position: relative;
-  top: -4px;
+  top: 0;
   font-family: 'Roboto-Regular', sans-serif;
 }
 
@@ -867,8 +867,8 @@ p.section-content_svg {
 }
 
 .container_content_section-content1 {
-  margin: 0 40px 0 15px;
-/*  flex-basis: 50%;*/
+  margin: 0 15px 0;
+  flex-basis: 100%;
 }
 
 .section__content__title{

@@ -31,37 +31,24 @@ while (have_posts()) : the_post(); ?>
 
                     </div>
                 </div>
+                <p class="">
                 <p class="section-content_svg">
                     <img class="section-content_svg_calendar"
-                                                    src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
-                                                    alt=""> <span> <?php the_date() ?> </span>
+                         src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
+                         alt=""> <span> <?php the_date() ?> </span>
                     <img class="section-content_svg_messege1"
                          src="<?= get_template_directory_uri() ?>/raw_html/img/messege.svg" alt=""></p>
-
-                <h1><?php the_title() ?></h1>
-
-                <p class="container_content_section-content_description1">
+                <h1 class="section__content__title"><?php the_title() ?></h1>
+                <span class="container_content_section-content_description1">
                     <?= str_replace(array('<pre>', '</pre>'), '', get_the_content()) ?>
+                </span>
                 </p>
+                <div class="container_content_section-content__share-news1"><span
+                            class="share-news-title1"> Делитесь новостями</span>
 
-                <!-- Social share -->
-                <div class="container_content_section-content__share-news1">
-                    <!-- [widget id="zoom-social-icons-widget-2"] -->
-                    <span class="share-news-title1"> Делитесь новостями</span>
-                    <div>
-                        <a href="" class="share-news1"><img
-                                    src="<?= get_template_directory_uri() ?>/raw_html/img/twitter-circled.svg"
-                                    alt=""></a>
-                        <a href="" class="share-news1"><img
-                                    src="<?= get_template_directory_uri() ?>/raw_html/img/facebook-circled.svg"
-                                    alt=""></a>
-                        <a href="" class="share-news1"><img
-                                    src="<?= get_template_directory_uri() ?>/raw_html/img/vkontakte-circled.svg"
-                                    alt=""></a>
-                    </div>
+                    <?php echo do_shortcode('[widget id="zoom-social-icons-widget-2"]'); ?>
                 </div>
             </div>
-
 
 
         </div>

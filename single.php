@@ -33,8 +33,8 @@ while (have_posts()) : the_post(); ?>
                 </div>
                 <p class="section-content_svg">
                     <img class="section-content_svg_calendar"
-                         src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
-                         alt=""> <span> <?php the_date() ?> </span>
+                                                    src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
+                                                    alt=""> <span> <?php the_date() ?> </span>
                     <img class="section-content_svg_messege1"
                          src="<?= get_template_directory_uri() ?>/raw_html/img/messege.svg" alt=""></p>
 
@@ -46,23 +46,22 @@ while (have_posts()) : the_post(); ?>
 
                 <!-- Social share -->
                 <div class="container_content_section-content__share-news1">
-
-                    [widget id="zoom-social-icons-widget-2"]
-                    <!--
+                    <!-- [widget id="zoom-social-icons-widget-2"] -->
                     <span class="share-news-title1"> Делитесь новостями</span>
                     <div>
                         <a href="" class="share-news1"><img
-                                    src="<?/*= get_template_directory_uri() */ ?>/raw_html/img/twitter-circled.svg"
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/twitter-circled.svg"
                                     alt=""></a>
                         <a href="" class="share-news1"><img
-                                    src="<?/*= get_template_directory_uri() */ ?>/raw_html/img/facebook-circled.svg"
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/facebook-circled.svg"
                                     alt=""></a>
                         <a href="" class="share-news1"><img
-                                    src="<?/*= get_template_directory_uri() */ ?>/raw_html/img/vkontakte-circled.svg"
+                                    src="<?= get_template_directory_uri() ?>/raw_html/img/vkontakte-circled.svg"
                                     alt=""></a>
-                    </div>-->
+                    </div>
                 </div>
             </div>
+
 
 
         </div>

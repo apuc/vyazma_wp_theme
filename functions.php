@@ -114,7 +114,8 @@ add_action('admin_print_footer_scripts-edit.php', function () {
 
     <script type="text/javascript" src="https://vyaznik.craft-group.xyz/js/jquery/jquery.min.js?ver=3.5.1"
             id="jquery-core-js"></script>
-    <script type="text/javascript" src="https://vyaznik.craft-group.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
+    <script type="text/javascript"
+            src="https://vyaznik.craft-group.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
             id="jquery-migrate-js"></script>
     <script type="text/javascript"
             src="https://vyaznik.craft-group.xyz/wp-content/themes/sp-theme/js/ajax-load-more.js?ver=5.6"
@@ -138,7 +139,7 @@ add_action('admin_print_footer_scripts-edit.php', function () {
 });
 
 
-// Пытаюсь в картинку
+// Добавление в посты темы картинки
 add_theme_support('post-thumbnails');
 
 
@@ -484,18 +485,20 @@ function sp_widgets_init()
 
 add_action('widgets_init', 'sp_widgets_init');
 
-function get_header_menu($menu_name){
-    foreach ( wp_get_nav_menu_items($menu_name) as $item){
+function get_header_menu($menu_name)
+{
+    foreach (wp_get_nav_menu_items($menu_name) as $item) {
         ?>
-        <a href="<?= $item->url?>" class="header__nav_link"><?= $item->post_title ?></a>
+        <a href="<?= $item->url ?>" class="header__nav_link"><?= $item->post_title ?></a>
         <?php
     }
 }
 
-function get_footer_menu($menu_name){
-    foreach ( wp_get_nav_menu_items($menu_name) as $item){
+function get_footer_menu($menu_name)
+{
+    foreach (wp_get_nav_menu_items($menu_name) as $item) {
         ?>
-        <a href="<?= $item->url?>" class="footer_links"><?= $item->post_title ?></a>
+        <a href="<?= $item->url ?>" class="footer_links"><?= $item->post_title ?></a>
         <?php
     }
 }
@@ -508,14 +511,14 @@ function get_main_news()
     get_template_part('load-important-news', null, ['all_options' => $all_options]);
 }
 
-function get_news_posts_query($post_per_page, array $category = null, $offset = null)
+function get_news_posts_query($post_per_page, array $category = null, $offset = null, array $exclude_id = null)
 {
     $params = [
         'post_type' => 'news',
         'posts_per_page' => $post_per_page
     ];
 
-    if (null !== $offset && !empty($offset)){
+    if (null !== $offset && !empty($offset)) {
         $params = array_merge($params, array('offset' => $offset));
     }
 
@@ -532,6 +535,11 @@ function get_news_posts_query($post_per_page, array $category = null, $offset = 
         ));
     }
 
+    if (null !== $exclude_id && !empty($exclude_id)) {
+        $params = array_merge($params, array('post__not_in' => $exclude_id));
+    }
+
+//   var_dump(new WP_Query($params));
     return new WP_Query($params);
 }
 
@@ -554,6 +562,21 @@ function get_load_news_button($news_posts_query)
     } else {
         echo "Новостей больше нет";
     }
+}
+
+function get_exclude_news_id() : array
+{
+    $id_array = array();
+
+    $all_options = get_option('true_options');
+
+    for ($i = 1; $i <= 4; $i++) {
+        array_push($id_array, (int) $all_options['important_news_id_' . $i]);
+    }
+
+    array_push($id_array, get_option('main_post_id'));
+
+    return $id_array;
 }
 
 function render_news_posts($news_posts_query)
@@ -581,7 +604,7 @@ function load_posts()
     $args = unserialize(stripslashes($_POST['query']));
     $args['paged'] = $_POST['page'] + 1; // следующая страница
 
-    if(1 != $_POST['page']) {
+    if (1 != $_POST['page']) {
         $args['offset'] += ($_POST['page'] - 1) * 4;
     }
 

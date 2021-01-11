@@ -16,6 +16,7 @@ setup_postdata($post);
 
 <div class="container_content">
     <div class="containerImgArticle">
+        <a href="<?= get_permalink()?>" class="ArticleHref"></a>
         <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="">
     </div>
     <div class="container_content_section-content">

@@ -14,26 +14,27 @@ function open() {
 	document.querySelector('body').classList.toggle("body__hidden");
 }
 
+window.addEventListener("resize", function () {
 
-/** Перенос текста в другой блок home-page */
-function transferEl(el, parentEl, minWidth, maxWidth) {
-	const width = window.innerWidth;
+	/** Перенос текста в другой блок home-page */
+	function transferEl(el, parentEl, minWidth, maxWidth) {
+		const width = window.innerWidth;
 
-	if (el && parentEl) {
-		/** проверка на существование элементов */
-		width <= minWidth ? parentEl.appendChild(el) : false;
-		width >= maxWidth ? parentEl.appendChild(el) : false
+		if (el && parentEl) {
+			/** проверка на существование элементов */
+			width <= minWidth ? parentEl.appendChild(el) : false;
+			width >= maxWidth ? parentEl.appendChild(el) : false
+		}
 	}
-}
-
-const vk = document.querySelector(".transferJs");
-const containerVk = document.querySelector(".container_content1");
-transferEl(vk, containerVk, 937);
+	const containerFirst = document.querySelector('.container_content__article_img1');
+	const vk = document.querySelector(".transferJs");
+	const containerVk = document.querySelector(".container_content1");
+	transferEl(vk, containerVk, 937);
+	transferEl(vk, containerFirst, null , 937);
+})
 
 window.onload = function () {
-
-
-
+	
 	if (document.querySelector("#addOldArticle")) {
 		document.querySelector("#addOldArticle").addEventListener("click", function () {
 			let linkImg = "./img/vgrom.com_1453716065_oboi.jpg";

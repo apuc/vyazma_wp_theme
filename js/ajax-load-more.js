@@ -23,7 +23,7 @@ jQuery(function ($) {
                     _this.html('<i class="fas fa-redo"></i> Загрузить ещё');
                     _this.prev().prev().append(data); // где вставить данные
                     this_page++; // увелич. номер страницы +1
-                    if (this_page == _this.attr('data-max-pages')) {
+                    if (this_page > _this.attr('data-max-pages')) {
                         _this.remove();               // удаляем кнопку, если последняя стр.
                     }
                 } else {                              // если закончились посты

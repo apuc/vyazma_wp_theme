@@ -34,7 +34,7 @@ window.addEventListener("resize", function () {
 })
 
 window.onload = function () {
-	
+
 	if (document.querySelector("#addOldArticle")) {
 		document.querySelector("#addOldArticle").addEventListener("click", function () {
 			let linkImg = "./img/vgrom.com_1453716065_oboi.jpg";

@@ -512,7 +512,7 @@ function get_main_news()
 }
 
 function get_news_posts_query($post_per_page, array $category = null, $offset = null,
-                                                                    array $exclude_id = null, array $args = null)
+                              array $exclude_id = null, array $args = null)
 {
     $params = [
         'post_type' => 'news',
@@ -547,12 +547,22 @@ function get_news_posts_query($post_per_page, array $category = null, $offset = 
     return new WP_Query($params);
 }
 
-function get_load_news_button($news_posts_query)
+function get_search_news_button()
 {
-    //$news_posts_query = get_news_posts_query($post_per_page, $category, $exclude_id);
+    ?>
+    <div class="header__search">
+        <input type="search">
+        <button class="search_button">
+            <img src="<?= get_template_directory_uri() ?>/raw_html/img/search.svg" alt="">
+        </button>
+    </div>
+    <?php
+}
+
+function get_load_news_button(WP_Query $news_posts_query)
+{
     if ($news_posts_query->have_posts()) {
         ?>
-        <script> var this_page = 1; </script>
         <button id="addOldArticle"
                 class="btn-loadmore add_OlderArticle_button"
                 title="Посмотреть еще"
@@ -568,14 +578,14 @@ function get_load_news_button($news_posts_query)
     }
 }
 
-function get_exclude_news_id() : array
+function get_exclude_news_id(): array
 {
     $id_array = array();
 
     $all_options = get_option('true_options');
 
     for ($i = 1; $i <= 4; $i++) {
-        array_push($id_array, (int) $all_options['important_news_id_' . $i]);
+        array_push($id_array, (int)$all_options['important_news_id_' . $i]);
     }
 
     array_push($id_array, get_option('main_post_id'));
@@ -601,6 +611,30 @@ function render_news_posts($news_posts_query)
     }
 }
 
+function search_news()
+{
+    $post_per_page = 12;
+
+    $news_search_query = get_news_posts_query($post_per_page, null, null, null,
+        ['s' => $_GET['s']]);
+
+    if ($news_search_query->have_posts()) { ?>
+        <div class="add_OlderArticle"> <?php
+            while ($news_search_query->have_posts()) {
+                $news_search_query->the_post();
+                get_template_part('load-news');
+            }
+            ?>
+        </div>
+        <script> var this_page = 2; </script>
+        <?php
+        if (1 < $news_search_query->max_num_pages && $news_search_query->have_posts()) {
+            get_load_news_button($news_search_query);
+        }
+    } else {
+        echo "<h2>По запросу \"{$_GET['s']}\" ничего не найдено</h2>";
+    }
+}
 
 // AJAX загрузка постов
 function load_posts()
@@ -609,7 +643,7 @@ function load_posts()
     $args['paged'] = $_POST['page'] + 1; // следующая страница
 
     if (1 != $_POST['page']) {
-        $args['offset'] += ($_POST['page'] - 1) * 4;
+        $args['offset'] += ($_POST['page'] - 1) * $args['posts_per_page'];
     }
 
     query_posts($args);

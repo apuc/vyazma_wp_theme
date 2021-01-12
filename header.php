@@ -34,9 +34,11 @@
                 <div class="header__nav-navigation">
                     <?php get_header_menu('Menu 1'); ?>
             </nav>
-            <div class="header__search"><input type="search">
+            <div class="header__search">
+                <input type="search" class="search-field" id="search-field">
                 <button class="search_button">
-                    <img src="<?= get_template_directory_uri() ?>/raw_html/img/search.svg" alt=""></button>
+                    <img src="<?= get_template_directory_uri() ?>/raw_html/img/search.svg" alt="">
+                </button>
             </div>
         </div>
     </header>

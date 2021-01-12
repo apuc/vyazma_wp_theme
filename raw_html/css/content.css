@@ -332,6 +332,7 @@ footer {
   .header__text {
     display: none;
   }
+
   .header__content__share-news1 > a {
     margin-right: 10px;
   }
@@ -413,9 +414,6 @@ footer {
 }
 
 
-
-
-
 .section-content_svg > img {
   position: relative;
 }
@@ -473,6 +471,7 @@ a.actual__single-article:hover:after {
   position: absolute;
   bottom: 15px;
   left: 15px;
+  width: 100%;
   color: #FFFFFF;
   font-family: 'Roboto-medium', sans-serif;
   display: flex;
@@ -498,6 +497,10 @@ a.actual__single-article:hover:after {
   position: relative;
   z-index: 1;
   line-height: 18px;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .messege_min {
@@ -535,6 +538,7 @@ a.actual__single-article:hover:after {
   flex-basis: 22%;
   margin-bottom: 40px;
 }
+
 .add_OlderArticle > article {
   flex-basis: 23%;
   max-width: unset;
@@ -733,6 +737,7 @@ a.actual__single-article:hover:after {
     display: flex;
     flex-direction: column;
   }
+
   .oldSingleArticle {
     max-width: unset;
   }
@@ -870,7 +875,7 @@ p.section-content_svg {
   flex-basis: 100%;
 }
 
-.section__content__title{
+.section__content__title {
   font-size: 35px;
   margin: 25px 0 30px;
   font-family: "Roboto-medium", sans-serif;
@@ -1008,6 +1013,32 @@ p.section-content_svg {
   overflow: auto;
 }
 
+#vk_comments:hover::-webkit-scrollbar-thumb {
+
+  background-color: #4a76a8;
+  border-radius: 50px;
+  box-shadow: inset 1px 1px 10px #f3faf7
+}
+
+#vk_comments::-webkit-scrollbar-thumb {
+  background-color: #f3faf7;
+}
+
+#vk_comments::-webkit-scrollbar {
+  opacity: 0;
+  transition: opacity  ease 0.3s;
+  width: 3px; /* ширина для вертикального скролла */
+  height: 3px; /* высота для горизонтального скролла */
+}
+
+#vk_comments:hover::-webkit-scrollbar{
+  width: 3px; /* ширина для вертикального скролла */
+  height: 3px; /* высота для горизонтального скролла */
+  background-color: #f3faf7;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity  ease 0.3s;
+}
 
 @media (max-width: 937px) {
   .container_content1 {
@@ -1068,7 +1099,7 @@ p.section-content_svg {
 }
 
 @media (max-width: 600px) {
-  .section__content__title{
+  .section__content__title {
     font-size: 30px;
   }
 

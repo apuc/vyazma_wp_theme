@@ -35,6 +35,7 @@ $sp_obj = new SpClass();
             </div>
             <div class="add_OlderArticle">
             </div>
+            <script> var this_page = 1 ; </script>
             <?php
             get_load_news_button(get_news_posts_query(4, null, $first_posts_num, get_exclude_news_id(), null));
             ?>

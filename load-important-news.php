@@ -26,5 +26,4 @@ $all_options = $args['all_options'];
         </a>
         <?php
     }; ?>
-
 </div>

@@ -31,4 +31,18 @@ jQuery(document).ready(function($) {
     	$(".sp_lazyload").lazyload();
    	});
 
+    let search_news_redirect = function (){
+		document.location.href = "http://vyazma.loc/?s=" + document.getElementById("search-field").value;
+	}
+
+	$('.search_button').on('click', search_news_redirect);
+
+    $('.search-field').on('keypress', function (e){
+    	if (e.which == 13){
+			document.location.href = "http://vyazma.loc/?s=" + document.getElementById("search-field").value;
+		}
+	});
+
+    $('.search-field').focusout(search_news_redirect);
+
 });	

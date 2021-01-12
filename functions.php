@@ -511,7 +511,8 @@ function get_main_news()
     get_template_part('load-important-news', null, ['all_options' => $all_options]);
 }
 
-function get_news_posts_query($post_per_page, array $category = null, $offset = null, array $exclude_id = null)
+function get_news_posts_query($post_per_page, array $category = null, $offset = null,
+                                                                    array $exclude_id = null, array $args = null)
 {
     $params = [
         'post_type' => 'news',
@@ -539,7 +540,10 @@ function get_news_posts_query($post_per_page, array $category = null, $offset = 
         $params = array_merge($params, array('post__not_in' => $exclude_id));
     }
 
-//   var_dump(new WP_Query($params));
+    if (null !== $args && !empty($args)) {
+        $params = array_merge($params, $args);
+    }
+
     return new WP_Query($params);
 }
 

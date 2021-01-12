@@ -424,9 +424,6 @@ footer {
   top: 0;
 }
 
-.section-content_svg_messege {
-  top: 2px;
-}
 
 .actual__article {
   display: flex;
@@ -490,6 +487,9 @@ a.actual__single-article:hover:after {
   color: #b7b7b7;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .actual__single-article_titleWrapper_Title {
@@ -844,11 +844,6 @@ p.section-content_svg {
 
 .section-content_svg_calendar {
   top: 0;
-}
-
-.section-content_svg_messege1 {
-  top: 2px;
-  left: 20px;
 }
 
 .section-content_svg > img {

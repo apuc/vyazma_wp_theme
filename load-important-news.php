@@ -20,7 +20,7 @@ $all_options = $args['all_options'];
                 <p class="actual__single-article_titleWrapper_data">
                     <img class="messege_min"
                          src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg">
-                    <?= get_post($all_options['important_news_id_' . $i])->post_date ?>
+                    <?= get_the_date('', $all_options['important_news_id_' . $i]) ?>
                 </p>
             </div>
         </a>

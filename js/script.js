@@ -32,17 +32,19 @@ jQuery(document).ready(function($) {
    	});
 
     let search_news_redirect = function (){
-		document.location.href = "http://vyazma.loc/?s=" + document.getElementById("search-field").value;
+		document.location.href = document.location.origin + "/?s="
+												+ document.getElementById("search-field").value;
 	}
 
 	$('.search_button').on('click', search_news_redirect);
 
     $('.search-field').on('keypress', function (e){
     	if (e.which == 13){
-			document.location.href = "http://vyazma.loc/?s=" + document.getElementById("search-field").value;
+			search_news_redirect();
 		}
-	});
+	}).focusout(search_news_redirect);
 
-    $('.search-field').focusout(search_news_redirect);
+
+
 
 });	

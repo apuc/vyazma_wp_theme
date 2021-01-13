@@ -20,7 +20,7 @@ setup_postdata($post);
         <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="">
     </div>
     <div class="container_content_section-content">
-        <h1 href=""> <?= the_title();?></h1>
+        <h1> <?= get_the_title();?></h1>
         <p>
             <?= get_the_excerpt(); ?>
         </p>

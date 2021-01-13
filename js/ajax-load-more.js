@@ -12,8 +12,6 @@ jQuery(function ($) {
             'tpl': _this.attr('data-tpl')
         }
 
-        console.log(this_page);
-
         $.ajax({
             url: '/wp-admin/admin-ajax.php',
             data: data,
@@ -47,7 +45,6 @@ jQuery(function ($) {
             data: data,
             type: 'POST',
             success: function (res) {
-                console.log(res);
             }
         });
     });

@@ -42,14 +42,15 @@ while (have_posts()) : the_post(); ?>
         </div>
     </section>
 
-    <span class="oldArticleTitle1">Похожие новости</span>
+    <span class="oldArticleTitle1">Похожие новости </span>
 
     <div class="oldArticle">
 
 
     <?php
     $categories = array();
-    foreach (get_the_terms(get_the_ID(), 'news') as $term) {
+    $terms = get_the_terms(get_the_ID(), 'news');
+    foreach ($terms as $term) {
         array_push($categories, $term->term_id);
     }
 

@@ -52,8 +52,8 @@ add_action('init', 'register_news_post_type');
 add_filter('post_type_link', 'news_permalink', 1, 2);
 add_filter('post_updated_messages', 'news_updated_messages');
 add_action('contextual_help', 'add_help_text', 10, 3);
-add_action('wp_enqueue_scripts', 'wp_vyaznik_styles');
-add_action('wp_enqueue_scripts', 'wp_vyaznik_js');
+//add_action('wp_enqueue_scripts', 'wp_vyaznik_styles');
+//add_action('wp_enqueue_scripts', 'wp_vyaznik_js');
 
 
 // Регистрируем свои колонки (столбцы). Обязательно.
@@ -109,16 +109,16 @@ add_action('manage_news_posts_custom_column', function ($column_name, $post_ID) 
 }, 10, 2);
 
 // Выводим стили для своих столбцов. Необязательно.
-add_action('admin_print_footer_scripts-edit.php', function () {
+add_action('admin_print_footer_scripts-edit.php', function () { //TODO
     ?>
 
-    <script type="text/javascript" src="https://vyaznik.craft-group.xyz/js/jquery/jquery.min.js?ver=3.5.1"
+    <script type="text/javascript" src="http://vyaznik.ru/js/jquery/jquery.min.js?ver=3.5.1"
             id="jquery-core-js"></script>
     <script type="text/javascript"
-            src="https://vyaznik.craft-group.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
+            src="http://vyaznik.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
             id="jquery-migrate-js"></script>
     <script type="text/javascript"
-            src="https://vyaznik.craft-group.xyz/wp-content/themes/sp-theme/js/ajax-load-more.js?ver=5.6"
+            src="<?= get_template_directory_uri() ?>/js/ajax-load-more.js?ver=5.6"
             id="wp_ajax_loadmore-js"></script>
 
     <style>
@@ -497,18 +497,18 @@ function get_header_menu($menu_name)
 function get_VK_comments_widget($class = null, $apiId = null)
 {
     ?>
-    <div class="<?= (isset($class)) ? $class : 'apiVkComments' ?>">
-        <h2>Последние коментарии</h2>
-        <script type="text/javascript">
-            VK.init({
-                apiId: <?= (isset($apiId)) ? $apiId : '7727410' ?>,
-                onlyWidgets: true
-            });
-        </script>
-        <div id="vk_comments"></div>
-        <script type="text/javascript">
-            VK.Widgets.Comments("vk_comments");
-        </script>
+<div class="<?= (isset($class)) ? $class : 'apiVkComments' ?>">
+    <h2>Последние коментарии</h2>
+    <script type="text/javascript">
+        VK.init({
+            apiId: <?= (isset($apiId)) ? $apiId : '7727410' ?>,
+            onlyWidgets: true
+        });
+    </script>
+    <div id="vk_comments"></div>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments");
+    </script>
 
     </div><?php
 }

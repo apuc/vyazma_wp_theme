@@ -16,7 +16,7 @@ $sp_obj = new SpClass();
                     <?php
                     get_VK_comments_widget();
                      $first_posts_num = 2; // also offset
-                    render_news_posts( get_news_posts_query($first_posts_num) ); ?>
+                    render_news_posts( get_news_posts_query($first_posts_num, null, null, get_exclude_news_id())); ?>
                 </div>
                 <div>
                 </div>
@@ -25,7 +25,7 @@ $sp_obj = new SpClass();
             </div>
             <script> var this_page = 1 ; </script>
             <?php
-            get_load_news_button(get_news_posts_query(4, null, $first_posts_num, get_exclude_news_id(), null));
+            get_load_news_button(get_news_posts_query(4, null, $first_posts_num, get_exclude_news_id()));
             ?>
         </section>
     </div>

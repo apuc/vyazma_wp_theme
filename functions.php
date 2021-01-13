@@ -672,11 +672,7 @@ function sp_scripts()
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/fontawesome-all.css');
 
-//    wp_enqueue_style('tpl-fonts', get_template_directory_uri() . '/raw_html/fonts/fonts.css');
-//    wp_enqueue_style('tpl-global', get_template_directory_uri() . '/raw_html/css/global.css');
-//    wp_enqueue_style('tpl-header', get_template_directory_uri() . '/raw_html/css/header.css');
     wp_enqueue_style('tpl-content', get_template_directory_uri() . '/raw_html/css/content.css');
-    //wp_enqueue_style('tpl-contentSecondArticle', get_template_directory_uri() . '/raw_html/css/contentSecondArticle.css');
 
     wp_enqueue_script('wp_ajax_loadmore', get_template_directory_uri() .
         '/js/ajax-load-more.js', array('jquery'), '', true);

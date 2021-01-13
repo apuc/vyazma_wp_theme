@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 
     let search_news_redirect = function (){
 		document.location.href = document.location.origin + "/?s="
-												+ document.getElementById("search-field").value;
+									+ document.getElementById("search-field").value + "&post_type=news";
 	}
 
 	$('.search_button').on('click', search_news_redirect);

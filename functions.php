@@ -494,6 +494,25 @@ function get_header_menu($menu_name)
     }
 }
 
+function get_VK_comments_widget($class = null, $apiId = null)
+{
+    ?>
+    <div class="<?= (isset($class)) ? $class : 'apiVkComments' ?>">
+        <h2>Последние коментарии</h2>
+        <script type="text/javascript">
+            VK.init({
+                apiId: <?= (isset($apiId)) ? $apiId : '7727410' ?>,
+                onlyWidgets: true
+            });
+        </script>
+        <div id="vk_comments"></div>
+        <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments");
+        </script>
+
+    </div><?php
+}
+
 function get_footer_menu($menu_name)
 {
     foreach (wp_get_nav_menu_items($menu_name) as $item) {

@@ -13,21 +13,9 @@ $sp_obj = new SpClass();
 
             <div class="container_oldArticle">
                 <div class="container_oldArticle_top">
-                    <div class="apiVkComments">
-                        <h2>Последние коментарии</h2>
-                        <script type="text/javascript">
-                            VK.init({
-                                apiId: 7722333,
-                                onlyWidgets: true
-                            });
-                        </script>
-                        <div id="vk_comments"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Comments("vk_comments");
-                        </script>
-
-                    </div>
-                    <?php $first_posts_num = 2; // also offset
+                    <?php
+                    get_VK_comments_widget();
+                     $first_posts_num = 2; // also offset
                     render_news_posts( get_news_posts_query($first_posts_num) ); ?>
                 </div>
                 <div>

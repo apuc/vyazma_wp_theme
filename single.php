@@ -16,20 +16,9 @@ while (have_posts()) : the_post(); ?>
                     <div class="container_content__article_img1_wrapper">
                         <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="">
                     </div>
-                    <div class="apiVkComments1 transferJs">
-                        <h2>Последние коментарии</h2>
-                        <script type="text/javascript">
-                            VK.init({
-                                apiId: 7722333,
-                                onlyWidgets: true
-                            });
-                        </script>
-                        <div id="vk_comments"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Comments("vk_comments", {limit: 5, attach: false});
-                        </script>
 
-                    </div>
+                    <?php get_VK_comments_widget("apiVkComments1 transferJs"); ?>
+
                 </div>
                 <p class="">
                 <p class="section-content_svg">

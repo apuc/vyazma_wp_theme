@@ -7,7 +7,7 @@ $sp_obj = new SpClass();
 
 ?>
 <article class="oldSingleArticle">
-    <a href="<?= get_permalink()?>" class="ArticleHref"></a>
+    <a href="<?= get_permalink()?>" class="ArticleHref" title="<?= get_the_excerpt()?>"></a>
     <div class="oldSingleArticle_blockImg">
         <img class="oldArticleImg"
              src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="<?= strip_tags(get_the_content()) ?>">

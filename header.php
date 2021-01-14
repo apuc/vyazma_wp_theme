@@ -31,9 +31,13 @@
         <img class="header__img" src="<?= get_template_directory_uri() ?>/raw_html/img/header_logo.png" alt="">
         <div class="header__nav">
             <nav id="navigationMenu" class="header__nav-navigation">
-                    <?php get_header_menu('Menu 1'); ?>
+                <?php get_header_menu('Menu 1'); ?>
             </nav>
-            <?php //echo do_shortcode('[widget id="zoom-social-icons-widget-2"]'); ?>
+
+            <div class="header__nav_link">
+                <?php echo do_shortcode('[widget id="zoom-social-icons-widget-3"]'); ?>
+            </div>
+
             <div class="header__search">
                 <input type="search" class="search-field" id="search-field">
                 <button class="search_button">

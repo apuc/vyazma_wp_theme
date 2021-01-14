@@ -28,12 +28,11 @@ while (have_posts()) : the_post(); ?>
                 </p>
                 <h1 class="section__content__title"><?php the_title() ?></h1>
                 <span class="container_content_section-content_description1">
-                    <?= str_replace(array('<pre>', '</pre>'), '', get_the_content()) ?>
+                    <?= str_replace(["\n"], '<p>', str_replace(array('<pre>', '</pre>'), '', get_the_content())) ?>
                 </span>
                 </p>
-                <div class="container_content_section-content__share-news1"><span
-                            class="share-news-title1"> Делитесь новостями</span>
-
+                <div class="container_content_section-content__share-news1">
+                    <span class="share-news-title1"> Делитесь новостями</span>
                     <?php echo do_shortcode('[widget id="zoom-social-icons-widget-2"]'); ?>
                 </div>
             </div>

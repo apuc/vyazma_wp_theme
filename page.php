@@ -17,7 +17,7 @@ while (have_posts()) : the_post(); ?>
                              src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
                              alt=""> <span> <?php the_date() ?> </span>
 
-                    <h1><?php the_title() ?></h1>
+                    <h1  class="section__content__title"><?php the_title() ?></h1>
 
                     <p class="container_content_section-content_description">
                         <?= get_the_content() ?>

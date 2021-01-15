@@ -44,7 +44,4 @@ jQuery(document).ready(function($) {
 		}
 	}).focusout(search_news_redirect);
 
-
-
-
 });	

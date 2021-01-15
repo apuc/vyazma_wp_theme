@@ -6,7 +6,8 @@
 get_header();
 $sp_obj = new SpClass();
 
-while (have_posts()) : the_post(); ?>
+while (have_posts()) : the_post();
+    setPostViews(get_the_ID()); ?>
 
     <div class="container">
     <section>
@@ -21,10 +22,10 @@ while (have_posts()) : the_post(); ?>
 
                 </div>
                 <p class="">
-                <p class="section-content_svg">
+                <p class="section-content_svg" style="display: block ">
                     <img class="section-content_svg_calendar"
-                         src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg"
-                         alt=""> <span> <?php the_date() ?> </span>
+                         src="<?= get_template_directory_uri() ?>/raw_html/img/calendar.svg">
+                    <span style="top:-4px"> <?php the_date() ?> </span>
                 </p>
                 <h1 class="section__content__title"><?php the_title() ?></h1>
                 <span class="container_content_section-content_description1">
@@ -36,8 +37,6 @@ while (have_posts()) : the_post(); ?>
                     <?php echo do_shortcode('[widget id="zoom-social-icons-widget-2"]'); ?>
                 </div>
             </div>
-
-
         </div>
     </section>
 

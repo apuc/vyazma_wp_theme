@@ -10,6 +10,7 @@
 
     <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
 
+
     <?php wp_head(); ?>
 </head>
 
@@ -24,6 +25,7 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
+        <div id="navOverlay" class="nav_overlay"></div>
         <div class="container_content__blockText">
             <p class="header__text">В старину мужиков, которые что-то мастерили из лозы называли «вязниками». Отсюда и
                 название

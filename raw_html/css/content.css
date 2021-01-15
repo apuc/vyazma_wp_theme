@@ -116,7 +116,7 @@ footer {
 .footer_links {
   color: #fafafa;
   font-size: 16px;
-  font-weight: 700;
+  /*  font-weight: 700;*/
   margin: 0 32px;
 }
 
@@ -302,11 +302,11 @@ footer {
   background-color: #fafafa;
   cursor: pointer;
   border-radius: 50px;
-  width: 20px;
+  width: 35px;
   top: 15px;
   right: 5px;
-  padding: 8px;
-  height: 20px;
+  padding: 0 6px;
+  height: 35px;
   text-align: center;
   line-height: 40px;
 }
@@ -348,7 +348,7 @@ footer {
   .header__nav_link {
     font-size: 25px;
     line-height: 50px;
-    padding-right: 150px;
+    /*    padding-right: 150px;*/
   }
 
   .header__nav-navigation {
@@ -445,6 +445,51 @@ a.actual__single-article {
   object-fit: cover;
 }
 
+a.actual__single-article:hover > .actual__single-article_titleWrapper {
+  bottom: 0;
+  height: 100%;
+  transition: 0.5s all ease;
+  justify-content: space-between;
+}
+
+a.actual__single-article:hover > .actual__single-article_titleWrapper > .actual__single-article_titleWrapper_Title {
+  bottom: -5%;
+  transition: 0.5s all ease;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.45) 70%);
+}
+
+.actual__single-article_description_hover {
+  opacity: 0;
+  top: 300%;
+  position: absolute;
+  transition: 0.5s all ease-out;
+}
+
+a.actual__single-article:hover > .actual__single-article_titleWrapper > .actual__single-article_description_hover {
+  opacity: 1;
+  position: absolute;
+  transition: 0.5s all ease-out;
+  top: 15%;
+  bottom: auto;
+  max-height: 70%;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.45) 70%);
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+a.actual__single-article:hover >.actual__single-article_titleWrapper_data {
+  color: #f3f3f3;
+  transition: all ease-out 0.3s;
+}
+
+a.actual__single-article:hover > .actual__single-article_titleWrapper > .actual__single-article_titleWrapper_data {
+  bottom: 6.5%;
+  transition: ease-out all 0.5s;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.45) 70%);
+}
+
 a.actual__single-article:after {
   transition: 0.5s all ease;
   content: "";
@@ -464,20 +509,22 @@ a.actual__single-article:after {
 
 a.actual__single-article:hover:after {
   content: "";
-  opacity: 0;
+ z-index: 0;
 }
 
 .actual__single-article_titleWrapper {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
-  width: 100%;
+  bottom: 0;
+  margin: 0 15px;
+  width: calc(100% - 30px);
   color: #FFFFFF;
   font-family: 'Roboto-medium', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+/*  justify-content: space-around;*/
   min-height: 80px;
+  height: 100%;
+  line-height: 18px;
 }
 
 .actual__single-article_titleWrapper_data {
@@ -487,8 +534,13 @@ a.actual__single-article:hover:after {
   position: relative;
   z-index: 1;
   display: flex;
+  bottom: 10%;
   flex-wrap: nowrap;
   align-items: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.45) 70%);
+  border-radius: 100px;
+  padding: 4px 10px 2px;
+  transition: all ease 0.3s;
 }
 
 .actual__single-article_titleWrapper_Title {
@@ -496,15 +548,20 @@ a.actual__single-article:hover:after {
   font-weight: 300;
   position: relative;
   z-index: 1;
+  bottom: -80%;
   line-height: 18px;
-  max-width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: ease-out all 0.5s;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .messege_min {
   margin-right: 15px;
+  width: 14px;
+  height: 15px;
 }
 
 .container_oldArticle {
@@ -629,9 +686,9 @@ a.actual__single-article:hover:after {
 .add_OlderArticle_button {
   background-color: #8aa6d1;
   margin-bottom: 50px;
-  font-family: 'Roboto-Regular', sans-serif;
+  font-family: 'Roboto-medium', sans-serif;
   font-size: 22px;
-  font-weight: 700;
+  /*  font-weight: 700;*/
   line-height: 20px;
   white-space: nowrap;
   color: #FFFFFF;
@@ -843,7 +900,8 @@ a.actual__single-article:hover:after {
 }
 
 p.section-content_svg {
-  display: block;
+  display: flex;
+  align-items: center;
 
 }
 
@@ -1026,18 +1084,18 @@ p.section-content_svg {
 
 #vk_comments::-webkit-scrollbar {
   opacity: 0;
-  transition: opacity  ease 0.3s;
+  transition: opacity ease 0.3s;
   width: 3px; /* ширина для вертикального скролла */
   height: 3px; /* высота для горизонтального скролла */
 }
 
-#vk_comments:hover::-webkit-scrollbar{
+#vk_comments:hover::-webkit-scrollbar {
   width: 3px; /* ширина для вертикального скролла */
   height: 3px; /* высота для горизонтального скролла */
   background-color: #f3faf7;
   border-radius: 50px;
   opacity: 1;
-  transition: opacity  ease 0.3s;
+  transition: opacity ease 0.3s;
 }
 
 @media (max-width: 937px) {

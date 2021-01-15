@@ -55,6 +55,50 @@ add_action('contextual_help', 'add_help_text', 10, 3);
 //add_action('wp_enqueue_scripts', 'wp_vyaznik_styles');
 //add_action('wp_enqueue_scripts', 'wp_vyaznik_js');
 
+// ПРОСМОТРЫ
+
+function getPostViews($postID)
+{
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count == '') {
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count;
+}
+
+function setPostViews($postID)
+{
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count == '') {
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    } else {
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
+function posts_column_views($defaults)
+{
+    $defaults['post_views'] = __('Просмотры');
+    return $defaults;
+}
+
+function posts_custom_column_views($column_name, $id)
+{
+    if ($column_name === 'post_views') {
+        echo getPostViews(get_the_ID());
+    }
+}
+
 
 // Регистрируем свои колонки (столбцы). Обязательно.
 add_filter('manage_news_posts_columns', function ($columns) {
@@ -69,7 +113,6 @@ add_filter('manage_news_posts_columns', function ($columns) {
 
     return array_slice($columns, 0, 1) + $columns_in_head + $columns + $columns_in_tale;
 });
-
 
 function set_main_id()
 {
@@ -589,7 +632,7 @@ function get_load_news_button(WP_Query $news_posts_query)
                 data-max-pages='<?= $news_posts_query->max_num_pages ?>'
                 data-tpl='news'
         >
-<!--            <i class="fas fa-redo"></i> -->
+            <!--            <i class="fas fa-redo"></i> -->
             Загрузить ещё
         </button>
         <?php
@@ -635,8 +678,18 @@ function search_news()
 {
     $post_per_page = 12;
 
+    $addict_args = ['s' => $_GET['s']];
+
+    if (isset($_GET['meta_key'])) {
+        $addict_args = array_merge($addict_args, ['meta_key' => $_GET['meta_key']]);
+    }
+
+    if (isset($_GET['orderby'])) {
+        $addict_args = array_merge($addict_args, ['orderby' => $_GET['orderby']]);
+    }
+
     $news_search_query = get_news_posts_query($post_per_page, null, null, null,
-        ['s' => $_GET['s']]);
+        $addict_args);
 
     if ($news_search_query->have_posts()) { ?>
         <div class="add_OlderArticle"> <?php
@@ -697,7 +750,8 @@ function sp_scripts()
     wp_enqueue_script('wp_ajax_loadmore', get_template_directory_uri() .
         '/js/ajax-load-more.js', array('jquery'), '', true);
 
-    wp_enqueue_script('main-script', get_template_directory_uri() . '/raw_html/js/script.js');
+        wp_enqueue_script('raw_html', get_template_directory_uri() . '/raw_html/js/mainScript.js',
+                                                                                null, null, true );
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.js');

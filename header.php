@@ -19,11 +19,11 @@
 <!--begin header-->
 <div class="container">
     <header>
-        <buttton id="menu" class="show">
+        <button id="menu" class="show">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
-        </buttton>
+        </button>
         <div class="container_content__blockText">
             <p class="header__text">В старину мужиков, которые что-то мастерили из лозы называли «вязниками». Отсюда и
                 название

@@ -589,7 +589,8 @@ function get_load_news_button(WP_Query $news_posts_query)
                 data-max-pages='<?= $news_posts_query->max_num_pages ?>'
                 data-tpl='news'
         >
-            <i class="fas fa-redo"></i> Загрузить ещё
+<!--            <i class="fas fa-redo"></i> -->
+            Загрузить ещё
         </button>
         <?php
     } else {
@@ -684,7 +685,7 @@ add_action('wp_ajax_nopriv_loadmore', 'load_posts');
 //Enqueue scripts and styles.
 function sp_scripts()
 {
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+    // wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
     wp_enqueue_style('cms-style', get_stylesheet_uri());
     wp_enqueue_style('mediascreen', get_template_directory_uri() . '/css/mediascreen.css');
     wp_enqueue_style('swiper', get_template_directory_uri() . '/css/swiper.css');

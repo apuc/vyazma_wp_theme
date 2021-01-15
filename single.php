@@ -13,9 +13,9 @@ while (have_posts()) : the_post(); ?>
         <div class="container_content1">
             <div class="container_content_section-content1">
                 <div class="container_content__article_img1">
-                    <div class="container_content__article_img1_wrapper">
+                    <a class="container_content__article_img1_wrapper" href="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>">
                         <img src="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>" alt="">
-                    </div>
+                    </a>
 
                     <?php get_VK_comments_widget("apiVkComments1 transferJs"); ?>
 

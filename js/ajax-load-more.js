@@ -3,7 +3,7 @@ jQuery(function ($) {
     // AJAX загрузка страниц/записей WP
     $('.btn-loadmore').on('click', function () {
         let _this = $(this);
-        _this.html('<i class="fas fa-redo fa-spin"></i> Загрузка...'); // изменение кнопки
+        _this.html('Загрузка...'); // изменение кнопки
 
         let data = {
             'action': 'loadmore',
@@ -18,7 +18,7 @@ jQuery(function ($) {
             type: 'POST',
             success: function (data) {
                 if (data) {
-                    _this.html('<i class="fas fa-redo"></i> Загрузить ещё');
+                    _this.html('Загрузить ещё');
                     _this.prev().prev().append(data); // где вставить данные
                     this_page++; // увелич. номер страницы +1
                     if (this_page > _this.attr('data-max-pages')) {

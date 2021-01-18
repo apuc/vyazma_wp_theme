@@ -18,7 +18,7 @@ $all_options = $args['all_options'];
                     <?= get_post($all_options['important_news_id_' . $i])->post_title ?>
                 </p>
                 <p class="actual__single-article_description_hover">
-                    <?= mb_substr(get_the_excerpt($all_options['important_news_id_' . $i]), 0, 70) . '...' ?>
+                    <?= mb_substr(get_the_excerpt($all_options['important_news_id_' . $i]), 0, 150) . '...' ?>
                 </p>
             </div>
             <p class="actual__single-article_titleWrapper_data">

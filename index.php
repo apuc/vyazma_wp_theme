@@ -15,13 +15,12 @@ $sp_obj = new SpClass();
                 <div class="container_oldArticle_top">
                     <?php
                     get_VK_comments_widget();
-                     $first_posts_num = 2; // also offset
+                    $first_posts_num = 2; // also offset
                     render_news_posts( get_news_posts_query($first_posts_num, null, null, get_exclude_news_id())); ?>
-                </div>
-                <div>
                 </div>
             </div>
             <div class="add_OlderArticle">
+
             </div>
             <script> var this_page = 1 ; </script>
             <?php

@@ -975,12 +975,12 @@ p.section-content_svg {
   top: -3px;
   font-family: 'Roboto-Regular', sans-serif;
 }
-.container_content_section-content_description1 > span > img {
+.container_content_section-content_description1__span > img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-.container_content_section-content_description1 > span {
+.container_content_section-content_description1__span {
   display: block;
   position: relative;
   overflow: hidden;
@@ -990,7 +990,7 @@ p.section-content_svg {
   color: #1c1c1c;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  white-space: break-spaces;
+  /*white-space: break-spaces;*/
   line-height: 31px;
 }
 

@@ -147,13 +147,13 @@ function get_open_graph(){
     switch ($open_graph_type) {
         case 'def' : ?>
             <!-- HTML Meta Tags -->
-            <meta name="description" content="Новостной сайт города Вязник">
+            <meta name="description" content="Новостной сайт города Вязники">
 
             <!-- Facebook Meta Tags -->
             <meta property="og:url" content="https://vyaznik.ru">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="Вязник">
-            <meta property="og:description" content="Новостной сайт города Вязник">
+            <meta property="og:title" content="Вязники">
+            <meta property="og:description" content="Новостной сайт города Вязники">
             <meta property="og:image"
                   content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
 
@@ -161,8 +161,8 @@ function get_open_graph(){
             <meta name="twitter:card" content="summary_large_image">
             <meta property="twitter:domain" content="">
             <meta property="twitter:url" content="https://vyaznik.ru">
-            <meta name="twitter:title" content="Вязник">
-            <meta name="twitter:description" content="Новостной сайт города Вязник">
+            <meta name="twitter:title" content="Вязники">
+            <meta name="twitter:description" content="Новостной сайт города Вязники">
             <meta name="twitter:image"
                   content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
 
@@ -177,7 +177,7 @@ function get_open_graph(){
             <meta property="og:url"
                   content="<?= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="Вязник | <?= get_the_title() ?>">
+            <meta property="og:title" content="Вязники | <?= get_the_title() ?>">
             <meta property="og:description" content="<?= get_the_excerpt() ?>">
             <meta property="og:image" content="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>">
 
@@ -186,7 +186,7 @@ function get_open_graph(){
             <meta property="twitter:domain" content="https://vyaznik.ru">
             <meta property="twitter:url"
                   content="<?= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
-            <meta name="twitter:title" content="Вязник | <?= get_the_title() ?>">
+            <meta name="twitter:title" content="Вязники | <?= get_the_title() ?>">
             <meta name="twitter:description" content="<?= get_the_excerpt() ?>">
             <meta name="twitter:image" content="<?= $sp_obj->get_thumbnail(get_the_ID(), '') ?>">
 
@@ -195,21 +195,21 @@ function get_open_graph(){
             break;
         case 'popular': ?>
             <!-- HTML Meta Tags -->
-            <meta name="description" content="Популярные новости города Вязник">
+            <meta name="description" content="Популярные новости города Вязники">
 
             <!-- Facebook Meta Tags -->
             <meta property="og:url" content="https://vyaznik.ru/?s=&meta_key=post_views_count&orderby=meta_value_num">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="Вязник | Популярные новости">
-            <meta property="og:description" content="Популярные новости города Вязник">
+            <meta property="og:title" content="Вязники | Популярные новости">
+            <meta property="og:description" content="Популярные новости города Вязники">
             <meta property="og:image" content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
 
             <!-- Twitter Meta Tags -->
             <meta name="twitter:card" content="summary_large_image">
             <meta property="twitter:domain" content="https://vyaznik.ru">
             <meta property="twitter:url" content="https://vyaznik.ru/?s=&meta_key=post_views_count&orderby=meta_value_num">
-            <meta name="twitter:title" content="Вязник | Популярные новости">
-            <meta name="twitter:description" content="Популярные новости города Вязник">
+            <meta name="twitter:title" content="Вязники | Популярные новости">
+            <meta name="twitter:description" content="Популярные новости города Вязники">
             <meta name="twitter:image" content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
 
             <!-- Meta Tags Generated via https://www.opengraph.xyz -->
@@ -222,7 +222,7 @@ function get_open_graph(){
             <!-- Facebook Meta Tags -->
             <meta property="og:url" content="https://vyaznik.ru/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%BE-%D0%B2%D1%8F%D0%B7%D0%BD%D0%B8%D0%BA%D0%B0%D1%85/">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="Вязник">
+            <meta property="og:title" content="Вязники">
             <meta property="og:description" content="Книги о Вязниках">
             <meta property="og:image"
                   content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
@@ -231,7 +231,7 @@ function get_open_graph(){
             <meta name="twitter:card" content="summary_large_image">
             <meta property="twitter:domain" content="">
             <meta property="twitter:url" content="https://vyaznik.ru/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%BE-%D0%B2%D1%8F%D0%B7%D0%BD%D0%B8%D0%BA%D0%B0%D1%85/">
-            <meta name="twitter:title" content="Вязник">
+            <meta name="twitter:title" content="Вязники">
             <meta name="twitter:description" content="Книги о Вязниках">
             <meta name="twitter:image"
                   content="https://vyaznik.ru/wp-content/themes/sp-theme/raw_html/img/header_logo.png">
@@ -697,7 +697,7 @@ function get_header_menu($menu_name)
 
 // Обернуть <img> в <span>
 function set_img_in_span(string $html){
-    $html = preg_replace('/<img(.*?)>/','<span><img$1></span>', $html);
+    $html = preg_replace('/<img(.*?)>/','<span class="container_content_section-content_description1__span "><img$1></span>', $html);
     return $html;
 }
 

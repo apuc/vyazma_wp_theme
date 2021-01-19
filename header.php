@@ -10,12 +10,36 @@
 
     <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
 
+    <?php
+    get_open_graph();
 
-    <?php wp_head(); ?>
+    wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
+<!— Yandex.Metrika counter —>
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(71309620, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/71309620" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!— /Yandex.Metrika counter —>
 
 <!--begin header-->
 <div class="container">
@@ -27,7 +51,7 @@
         </button>
         <div id="navOverlay" class="nav_overlay"></div>
         <div class="container_content__blockText">
-            <p class="header__text">В старину мужиков, которые что-то мастерили из лозы называли «вязниками». Отсюда и
+            <p class="header__text">В старину мужиков, которые что-то мастерили из лозы, называли «вязниками». Отсюда и
                 название
                 города - Вязники.</p></div>
         <img class="header__img" src="<?= get_template_directory_uri() ?>/raw_html/img/header_logo.png" alt="">

@@ -28,7 +28,7 @@ while (have_posts()) : the_post();
                     <span style="top:-4px"> <?php the_date() ?> </span>
                 </p>
                 <h1 class="section__content__title"><?php the_title() ?></h1>
-                <span class="container_content_section-content_description1"><?= close_tags(str_replace(array('<pre>', '</pre>'), '', get_the_content())) ?>
+                <span class="container_content_section-content_description1"><?= set_img_in_span( close_tags(str_replace(array('<pre>', '</pre>'), '', get_the_content())) )?>
                 </span>
                 </p>
                 <div class="container_content_section-content__share-news1">
@@ -57,5 +57,7 @@ endwhile;
 
 ?> </div>
     </div>
+
+
 <?php
 get_footer();

@@ -15,7 +15,7 @@ $sp_obj = new SpClass();
     <div class="OldArticleDescription">
         <a href="<?= get_permalink()?>" class="oldSingleArticle_title"><?= the_title() ?></a>
         <p class="oldSingleArticle_description">
-            <?= close_tags(mb_substr(str_replace(array('<pre>', '</pre>'), '', get_the_excerpt()), 0, 50) . '...'); ?>
+            <?= close_tags(mb_substr(str_replace(array('<pre>', '</pre>'), '', get_the_excerpt()), 0, 75) . '...'); ?>
         </p>
     </div>
 </article>

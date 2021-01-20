@@ -146,6 +146,7 @@ function get_open_graph(){
 
     switch ($open_graph_type) {
         case 'def' : ?>
+            <title>Вязник.ру</title>
             <!-- HTML Meta Tags -->
             <meta name="description" content="Новостной сайт города Вязники">
 
@@ -170,6 +171,7 @@ function get_open_graph(){
             <?
             break;
         case 'news' : ?>
+            <title><?= get_the_title() ?></title>
             <!-- HTML Meta Tags -->
             <meta name="description" content="<?= get_the_excerpt() ?>">
 
@@ -194,6 +196,7 @@ function get_open_graph(){
             <?
             break;
         case 'popular': ?>
+            <title>Вязник.ру</title>
             <!-- HTML Meta Tags -->
             <meta name="description" content="Популярные новости города Вязники">
 
@@ -216,6 +219,7 @@ function get_open_graph(){
             <?
             break;
         case 'book' : ?>
+            <title>Вязник.ру</title>
             <!-- HTML Meta Tags -->
             <meta name="description" content="Книги о Вязниках">
 

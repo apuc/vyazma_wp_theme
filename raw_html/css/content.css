@@ -980,6 +980,16 @@ p.section-content_svg {
   height: auto;
   object-fit: cover;
 }
+.image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.image > img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
 .container_content_section-content_description1__span {
   display: block;
   position: relative;
